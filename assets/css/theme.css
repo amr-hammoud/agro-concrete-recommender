@@ -144,7 +144,8 @@ body {
 .toolbar-wrap {
   display: flex;
   justify-content: center;
-  margin: 2rem 0 1rem 0;
+  margin: 0 0 1rem 0;
+  padding-top: 1rem;
 }
 .toolbar {
   display: flex;
@@ -171,4 +172,30 @@ body {
 .toolbar .tool.active {
   background: var(--brown);
   color: #fff;
+}
+
+/* tiny version badge */
+.version-badge {
+  position: fixed;
+  left: 12px; /* bottom-left to avoid the sticky footer nav */
+  bottom: 12px;
+  z-index: 60;
+  background: var(--brown);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+@media (max-width: 640px) {
+  .version-badge {
+    bottom: 64px;
+  } /* lift a bit above the mobile sticky nav */
+}
+@media print {
+  .version-badge {
+    display: none !important;
+  }
 }
