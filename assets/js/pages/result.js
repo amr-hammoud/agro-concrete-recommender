@@ -1,11 +1,29 @@
 (async function () {
   UI.renderHeader("Result");
 
-  const s = App.State.syncFromURL();
-  const tdata = await App.loadJSON("assets/data/typology.json");
+  const [ctxData, typData] = await Promise.all([
+    App.loadJSON("assets/data/countries.json"),
+    App.loadJSON("assets/data/typology.json"),
+  ]);
+  const countries = ctxData.countries || [];
+  const L = Short.buildLookup({ countries, typologiesTable: typData });
 
-  const summary = document.getElementById("summary");
-  summary.innerHTML = `
+  // Restore (prefer short code if present)
+  const params = new URLSearchParams(location.search);
+  const sCode = params.get("s");
+  const restored = sCode
+    ? Short.decodeShort(sCode, L)
+    : App.State.syncFromURL();
+
+  const s = { ...App.State.get(), ...restored };
+  App.State.set(s); // normalize
+
+  // Emit compact URL for this page too (idempotent)
+  const code = Short.encodeShort(s, L);
+  Short.writeURLWithCode(code);
+
+  // Summary
+  document.getElementById("summary").innerHTML = `
     <h2 class="text-xl font-semibold mb-4">Your Selection</h2>
     <div class="grid md:grid-cols-2 gap-2 text-sm">
       <div><strong>Country:</strong> ${s.country || "—"}</div>
@@ -24,35 +42,32 @@
     </div>
   `;
 
-  function fromTypology() {
-    if (!s.typology) return null;
-    const row = (tdata.typologies || []).find((t) => t.typology === s.typology);
-    if (!row) return null;
-    return {
-      standards: row.standards || "—",
-      testing: row.testing_method || "—",
-      tableArchitectural: row.architectural_approach || "—",
-      recommendation: row.recommendations?.[s.industrial || "low"] || "—",
-    };
-  }
+  // Recommendation (Typology + Industrial tier)
+  const row = (typData.typologies || []).find((t) => t.typology === s.typology);
+  const rec = row
+    ? {
+        standards: row.standards || "—",
+        testing: row.testing_method || "—",
+        tableArchitectural: row.architectural_approach || "—",
+        recommendation: row.recommendations?.[s.industrial || "low"] || "—",
+      }
+    : null;
 
-  const rec = fromTypology();
-  const recBox = document.getElementById("recommendation");
-  if (rec) {
-    recBox.innerHTML = `
-      <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
-      <p class="mb-2"><strong>Material Suggestion:</strong> ${rec.recommendation}</p>
-      <p class="mb-2"><strong>Standards:</strong> ${rec.standards}</p>
-      <p class="mb-2"><strong>Testing Methods:</strong> ${rec.testing}</p>
-      <p class="mb-2"><strong>Architectural Approach (from table):</strong> ${rec.tableArchitectural}</p>
-    `;
-  } else {
-    recBox.innerHTML = `
-      <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
-      <p>No matching recommendation found. Please choose a Typology and Industrial Tier.</p>
-    `;
-  }
+  const box = document.getElementById("recommendation");
+  box.innerHTML = rec
+    ? `
+    <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
+    <p class="mb-2"><strong>Material Suggestion:</strong> ${rec.recommendation}</p>
+    <p class="mb-2"><strong>Standards:</strong> ${rec.standards}</p>
+    <p class="mb-2"><strong>Testing Methods:</strong> ${rec.testing}</p>
+    <p class="mb-2"><strong>Architectural Approach (from table):</strong> ${rec.tableArchitectural}</p>
+  `
+    : `
+    <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
+    <p>No matching recommendation found. Please choose a Typology and Industrial Tier.</p>
+  `;
 
+  // Copy Link (already short)
   const btnCopy = document.getElementById("copylink");
   if (btnCopy) {
     btnCopy.addEventListener("click", async () => {
@@ -66,9 +81,8 @@
     });
   }
 
-  // sticky back/home
-  const q = App.State.toQuery(App.State.get());
-  const back = "approach.html" + (q ? "?" + q : "");
-  const next = "index.html" + (q ? "?" + q : "");
-  UI.setStickyLinks({ back, next });
+  // Sticky nav back/home
+  const back = "approach.html" + (code ? "?s=" + code : "");
+  const home = "index.html" + (code ? "?s=" + code : "");
+  UI.setStickyLinks({ back, next: home });
 })();

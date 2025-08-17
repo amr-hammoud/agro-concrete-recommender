@@ -9,20 +9,30 @@
 
   function renderHeader(current) {
     const root = document.getElementById("app-header");
-    if (!root || !window.App) return;
-    const q = App.State.toQuery(App.State.get());
-    const sep = `<span class="opacity-60">/</span>`;
+    if (!root) return;
+
+    // keep whatever query is on the URL (works for ?s= short links)
+    const suffix = window.location.search || "";
+    const steps = [
+      { id: "Context", href: "context.html" },
+      { id: "Typology", href: "typology.html" },
+      { id: "Approach", href: "approach.html" },
+      { id: "Result", href: "result.html" },
+    ];
+
     root.innerHTML = `
-      <nav class="breadcrumb mb-4">
+    <div class="toolbar-wrap">
+      <nav class="toolbar">
         ${steps
           .map((s) => {
             const active = s.id === current ? "active" : "";
-            const href = s.href + (q ? "?" + q : "");
-            return `<a class="${active}" href="${href}">${s.id}</a>`;
+            const href = s.href + suffix;
+            return `<a class="tool ${active}" href="${href}">${s.id}</a>`;
           })
-          .join(sep)}
+          .join("")}
       </nav>
-    `;
+    </div>
+  `;
   }
 
   function toast(msg) {

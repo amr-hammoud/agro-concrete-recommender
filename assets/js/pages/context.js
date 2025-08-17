@@ -1,8 +1,13 @@
 (async function () {
-  const data = await App.loadJSON("assets/data/countries.json");
-  const countries = data.countries || [];
-
   UI.renderHeader("Context");
+
+  // Load both datasets so we can fully preserve/emit the short link
+  const [ctxData, typData] = await Promise.all([
+    App.loadJSON("assets/data/countries.json"),
+    App.loadJSON("assets/data/typology.json"),
+  ]);
+  const countries = ctxData.countries || [];
+  const L = Short.buildLookup({ countries, typologiesTable: typData });
 
   const els = {
     country: document.getElementById("country"),
@@ -15,16 +20,23 @@
     stickyNext: document.getElementById("sticky-next"),
   };
 
-  let saved = App.State.syncFromURL();
+  const params = new URLSearchParams(location.search);
+  const sCode = params.get("s");
+
+  // Start from URL short code if present; otherwise from (legacy) query or LocalStorage
+  let state = sCode
+    ? { ...App.State.get(), ...Short.decodeShort(sCode, L) }
+    : App.State.syncFromURL();
 
   const options = (list = []) =>
     ['<option value="">-- Select --</option>']
       .concat(list.map((v) => `<option>${v}</option>`))
       .join("");
 
+  // Populate Country first
   els.country.innerHTML = options(countries.map((c) => c.name).sort());
 
-  function populateFor(name) {
+  function populateForCountry(name) {
     const c = countries.find((x) => x.name === name);
     els.climate.innerHTML = options(c?.climates);
     els.agri.innerHTML = options(c?.agriculture);
@@ -32,46 +44,57 @@
     els.cons.innerHTML = options(c?.construction_methods);
   }
 
-  // restore
-  if (saved.country) els.country.value = saved.country;
-  populateFor(els.country.value);
-  if (saved.climate) els.climate.value = saved.climate;
-  if (saved.agri) els.agri.value = saved.agri;
-  if (saved.food) els.food.value = saved.food;
-  if (saved.cons) els.cons.value = saved.cons;
+  // Restore selections
+  if (state.country) els.country.value = state.country;
+  populateForCountry(els.country.value);
+  if (state.climate) els.climate.value = state.climate;
+  if (state.agri) els.agri.value = state.agri;
+  if (state.food) els.food.value = state.food;
+  if (state.cons) els.cons.value = state.cons;
 
-  els.country.addEventListener("change", () => populateFor(els.country.value));
+  els.country.addEventListener("change", () =>
+    populateForCountry(els.country.value)
+  );
 
-  function snapshot() {
-    return {
+  function current() {
+    const s = {
+      ...App.State.get(),
       country: els.country.value,
       climate: els.climate.value,
       agri: els.agri.value,
       food: els.food.value,
       cons: els.cons.value,
-      typology: saved.typology,
-      component: saved.component,
-      arch: saved.arch,
-      industrial: saved.industrial,
     };
+    App.State.set(s);
+    return s;
   }
 
   function isValid() {
-    return !!(
-      els.country.value &&
-      els.climate.value &&
-      els.agri.value &&
-      els.food.value &&
-      els.cons.value
-    );
+    const s = current();
+    return !!(s.country && s.climate && s.agri && s.food && s.cons);
   }
 
-  function setNext(href, enabled) {
-    if (enabled) {
-      els.next.setAttribute("href", href);
+  function refreshLinks() {
+    const s = current();
+    const code = Short.encodeShort(s, L);
+    const backHref = "index.html" + (code ? "?s=" + code : "");
+    const nextHref = "typology.html" + (code ? "?s=" + code : "");
+
+    // push compact URL for this page
+    Short.writeURLWithCode(code);
+
+    // sticky
+    if (els.stickyBack) {
+      els.stickyBack.setAttribute("href", backHref);
+      els.stickyBack.classList.remove("is-disabled");
+    }
+
+    // gate "Next"
+    if (isValid()) {
+      els.next.setAttribute("href", nextHref);
       els.next.classList.remove("is-disabled");
       if (els.stickyNext) {
-        els.stickyNext.setAttribute("href", href);
+        els.stickyNext.setAttribute("href", nextHref);
         els.stickyNext.classList.remove("is-disabled");
       }
     } else {
@@ -84,28 +107,11 @@
     }
   }
 
-  function refresh() {
-    const snap = snapshot();
-    App.State.set(snap);
-    App.State.pushToURL(snap);
-    const q = App.State.toQuery(snap);
-    const nextHref = "typology.html" + (q ? "?" + q : "");
-    const backHref = "index.html" + (q ? "?" + q : "");
-
-    // sticky back always enabled
-    if (els.stickyBack) {
-      els.stickyBack.setAttribute("href", backHref);
-      els.stickyBack.classList.remove("is-disabled");
-    }
-
-    setNext(nextHref, isValid());
-  }
-
   ["change", "keyup"].forEach((evt) => {
     ["country", "climate", "agri", "food", "cons"].forEach((id) => {
-      document.getElementById(id).addEventListener(evt, refresh);
+      document.getElementById(id).addEventListener(evt, refreshLinks);
     });
   });
 
-  refresh();
+  refreshLinks();
 })();
