@@ -36,14 +36,26 @@
     <div id="toast-root" aria-live="polite" class="no-print"></div>
 
     <div class="max-w-4xl mx-auto py-10 px-4">
-      <div class="flex items-center justify-between mb-6">
+      <div
+        class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6"
+      >
         <h1 class="text-2xl font-bold brand-brown">Result</h1>
-        <div class="no-print space-x-2">
-          <button id="copylink" class="btn btn-secondary">Copy Link</button>
-          <button onclick="window.print()" class="btn btn-secondary">
+        <div class="no-print flex flex-wrap gap-2 w-full sm:w-auto">
+          <button id="copylink" class="btn btn-secondary w-full sm:w-auto">
+            Copy Link
+          </button>
+          <button
+            onclick="window.print()"
+            class="btn btn-secondary w-full sm:w-auto"
+          >
             Print as PDF
           </button>
-          <button onclick="resetAll()" class="btn btn-secondary">Reset</button>
+          <button
+            onclick="resetAll()"
+            class="btn btn-secondary w-full sm:w-auto"
+          >
+            Reset
+          </button>
         </div>
       </div>
 
