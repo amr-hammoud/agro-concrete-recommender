@@ -18,6 +18,34 @@ body {
   border-color: var(--tan);
 }
 
+/* buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--brown);
+  color: #fff;
+  border-color: var(--brown);
+}
+.btn-secondary {
+  background: #7a5a3c;
+  color: #fff;
+  border-color: #7a5a3c;
+}
+.btn:hover {
+  filter: brightness(0.95);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
 .card {
   background: #fff;
   border: 1px solid var(--tan);

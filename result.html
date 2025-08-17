@@ -39,24 +39,16 @@
       <div class="flex items-center justify-between mb-6">
         <h1 class="text-2xl font-bold brand-brown">Result</h1>
         <div class="no-print space-x-2">
-          <button id="copylink" class="px-3 py-2 rounded border">
-            Copy Link
-          </button>
-          <button onclick="window.print()" class="px-3 py-2 rounded border">
+          <button id="copylink" class="btn btn-secondary">Copy Link</button>
+          <button onclick="window.print()" class="btn btn-secondary">
             Print as PDF
           </button>
-          <button onclick="resetAll()" class="px-3 py-2 rounded border">
-            Reset
-          </button>
+          <button onclick="resetAll()" class="btn btn-secondary">Reset</button>
         </div>
       </div>
 
       <div id="summary" class="card mb-6 print-block"></div>
       <div id="recommendation" class="card print-block"></div>
-
-      <div class="flex justify-end mt-4 no-print">
-        <a id="home" class="px-4 py-2 rounded border">Home</a>
-      </div>
     </div>
 
     <nav class="sticky-nav sm:hidden" id="sticky-nav">
