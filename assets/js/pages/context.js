@@ -1,6 +1,7 @@
 (async function () {
   UI.renderHeader("Context");
 
+  // Load both datasets (for short link lookup tables)
   const [ctxData, typData] = await Promise.all([
     App.loadJSON("assets/data/countries.json"),
     App.loadJSON("assets/data/typology.json"),
@@ -22,6 +23,7 @@
   const params = new URLSearchParams(location.search);
   const sCode = params.get("s");
 
+  // Prefer short link if present
   let state = sCode
     ? { ...App.State.get(), ...Short.decodeShort(sCode, L) }
     : App.State.syncFromURL();
@@ -31,9 +33,9 @@
       .concat(list.map((v) => `<option>${v}</option>`))
       .join("");
 
+  // Populate country & dependents
   els.country.innerHTML = options(countries.map((c) => c.name).sort());
-
-  function populateForCountry(name) {
+  function fillForCountry(name) {
     const c = countries.find((x) => x.name === name);
     els.climate.innerHTML = options(c?.climates);
     els.agri.innerHTML = options(c?.agriculture);
@@ -41,18 +43,19 @@
     els.cons.innerHTML = options(c?.construction_methods);
   }
 
+  // Restore selections
   if (state.country) els.country.value = state.country;
-  populateForCountry(els.country.value);
+  fillForCountry(els.country.value);
   if (state.climate) els.climate.value = state.climate;
   if (state.agri) els.agri.value = state.agri;
   if (state.food) els.food.value = state.food;
   if (state.cons) els.cons.value = state.cons;
 
   els.country.addEventListener("change", () =>
-    populateForCountry(els.country.value)
+    fillForCountry(els.country.value)
   );
 
-  function current() {
+  function snapshot() {
     const s = {
       ...App.State.get(),
       country: els.country.value,
@@ -65,39 +68,22 @@
     return s;
   }
 
-  function isValid() {
-    const s = current();
-    return !!(s.country && s.climate && s.agri && s.food && s.cons);
-  }
-
   function refreshLinks() {
-    const s = current();
+    const s = snapshot();
     const code = Short.encodeShort(s, L);
+
     const backHref = "index.html" + (code ? "?s=" + code : "");
     const nextHref = "typology.html" + (code ? "?s=" + code : "");
 
+    // write compact URL for this page
     Short.writeURLWithCode(code);
 
-    if (els.stickyBack) {
-      els.stickyBack.setAttribute("href", backHref);
-      els.stickyBack.classList.remove("is-disabled");
-    }
+    // sticky nav
+    if (els.stickyBack) els.stickyBack.setAttribute("href", backHref);
+    if (els.stickyNext) els.stickyNext.setAttribute("href", nextHref);
 
-    if (isValid()) {
-      els.next.setAttribute("href", nextHref);
-      els.next.classList.remove("is-disabled");
-      if (els.stickyNext) {
-        els.stickyNext.setAttribute("href", nextHref);
-        els.stickyNext.classList.remove("is-disabled");
-      }
-    } else {
-      els.next.removeAttribute("href");
-      els.next.classList.add("is-disabled");
-      if (els.stickyNext) {
-        els.stickyNext.removeAttribute("href");
-        els.stickyNext.classList.add("is-disabled");
-      }
-    }
+    // in-card next (visible on ≥sm only)
+    els.next.setAttribute("href", nextHref);
   }
 
   ["change", "keyup"].forEach((evt) => {

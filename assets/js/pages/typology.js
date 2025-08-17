@@ -19,7 +19,9 @@
   const params = new URLSearchParams(location.search);
   const sCode = params.get("s");
 
-  let restored = sCode ? Short.decodeShort(sCode, L) : App.State.syncFromURL();
+  const restored = sCode
+    ? Short.decodeShort(sCode, L)
+    : App.State.syncFromURL();
 
   elTyp.innerHTML = ['<option value="">-- Select --</option>']
     .concat(typologies.map((v) => `<option>${v}</option>`))
@@ -27,10 +29,6 @@
 
   if (restored.typology) elTyp.value = restored.typology;
   if (restored.component) elComp.value = restored.component;
-
-  function isValid() {
-    return !!(elTyp.value && elComp.value);
-  }
 
   function snapshot() {
     const s = {
@@ -45,36 +43,22 @@
   function refreshLinks() {
     const s = snapshot();
     const code = Short.encodeShort(s, L);
+
     const back = "context.html" + (code ? "?s=" + code : "");
     const next = "approach.html" + (code ? "?s=" + code : "");
 
     Short.writeURLWithCode(code);
 
     elBack.setAttribute("href", back);
-    if (stickyBack) {
-      stickyBack.setAttribute("href", back);
-      stickyBack.classList.remove("is-disabled");
-    }
+    if (stickyBack) stickyBack.setAttribute("href", back);
 
-    if (isValid()) {
-      elNext.setAttribute("href", next);
-      elNext.classList.remove("is-disabled");
-      if (stickyNext) {
-        stickyNext.setAttribute("href", next);
-        stickyNext.classList.remove("is-disabled");
-      }
-    } else {
-      elNext.removeAttribute("href");
-      elNext.classList.add("is-disabled");
-      if (stickyNext) {
-        stickyNext.removeAttribute("href");
-        stickyNext.classList.add("is-disabled");
-      }
-    }
+    elNext.setAttribute("href", next);
+    if (stickyNext) stickyNext.setAttribute("href", next);
   }
 
   ["change", "keyup"].forEach((evt) => {
     [elTyp, elComp].forEach((el) => el.addEventListener(evt, refreshLinks));
   });
+
   refreshLinks();
 })();

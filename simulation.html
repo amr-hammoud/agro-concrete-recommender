@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simulation Results — Coming Soon</title>
+
+    <!-- Tailwind + fonts + theme -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+  </head>
+  <body class="min-h-screen brand-bg">
+    <div class="max-w-3xl mx-auto py-10 px-4">
+      <header class="mb-6 text-center">
+        <h1 class="text-3xl font-bold brand-brown">Simulation Results</h1>
+        <p class="text-sm mt-2 opacity-80">Coming soon</p>
+      </header>
+
+      <div class="card space-y-3">
+        <p class="text-sm">
+          This tool will let you preview KPIs from external simulation outputs
+          directly in the browser.
+        </p>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>Upload or paste results</li>
+          <li>View key performance charts</li>
+          <li>Compare scenarios side-by-side</li>
+        </ul>
+      </div>
+
+      <div class="mt-6 grid gap-2 sm:flex sm:justify-end">
+        <a id="home" class="btn btn-secondary w-full sm:w-auto">Back to Home</a>
+        <a id="recommend" class="btn btn-primary w-full sm:w-auto"
+          >Try Recommendation</a
+        >
+        <button onclick="resetAll()" class="btn btn-secondary w-full sm:w-auto">
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <script src="assets/js/state.js"></script>
+    <script src="assets/js/shortlink.js"></script>
+    <script src="assets/js/version.js"></script>
+    <script>
+      // preserve ?s= and wire buttons
+      (function () {
+        const suffix = window.location.search || "";
+        document
+          .getElementById("home")
+          .setAttribute("href", "index.html" + suffix);
+        document
+          .getElementById("recommend")
+          .setAttribute("href", "context.html" + suffix);
+      })();
+    </script>
+  </body>
+</html>

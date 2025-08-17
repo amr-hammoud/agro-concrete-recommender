@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Agro-Waste Recommender</title>
-    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+
+    <!-- Tailwind + fonts + theme -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,30 +14,146 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/theme.css" />
-    <script defer src="assets/js/state.js"></script>
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+
+    <style>
+      /* index-only polish for selectable cards */
+      .opt-card {
+        cursor: pointer;
+        transition: box-shadow 0.15s ease, border-color 0.15s ease,
+          transform 0.05s ease;
+      }
+      .opt-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+      .opt-card:focus {
+        outline: 2px solid var(--tan);
+        outline-offset: 2px;
+      }
+      .opt-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 0.2rem 0.45rem;
+        border-radius: 0.4rem;
+        line-height: 1;
+        background: #7a5a3c;
+        color: #fff;
+      }
+    </style>
   </head>
   <body class="min-h-screen brand-bg">
     <div class="max-w-4xl mx-auto py-10 px-4">
       <header class="mb-8 text-center">
         <h1 class="text-3xl font-bold brand-brown">
-          Agro-Waste Material Recommender
+          Agro-Waste Material Tools
         </h1>
-        <p class="text-sm mt-2">Context → Typology → Approach → Result</p>
+        <p class="text-sm mt-2">Pick a tool to start</p>
       </header>
 
-      <a href="context.html" class="card block hover:shadow-lg">
-        <h2 class="text-xl font-semibold mb-2">Start Recommendation</h2>
-        <p>Begin with your Context.</p>
-      </a>
+      <!-- Clickable options -->
+      <div class="grid md:grid-cols-3 gap-4" id="options">
+        <!-- Recommendation -->
+        <a
+          class="card opt-card block"
+          data-mode="recommendation"
+          href="context.html"
+          role="link"
+          tabindex="0"
+        >
+          <div class="opt-title">
+            <h2 class="text-xl font-semibold">Recommendation</h2>
+          </div>
+          <p class="mt-2 text-sm opacity-80">
+            Follow the 4-step flow (Context → Typology → Approach → Result) and
+            get a material suggestion.
+          </p>
+        </a>
 
-      <div class="mt-6 text-right">
+        <!-- Virtual Model (placeholder) -->
+        <a
+          class="card opt-card block"
+          data-mode="model"
+          href="model.html"
+          role="link"
+          tabindex="0"
+        >
+          <div class="opt-title">
+            <h2 class="text-xl font-semibold">Virtual Model</h2>
+            <span class="badge">Soon</span>
+          </div>
+          <p class="mt-2 text-sm opacity-80">
+            Define custom material properties and generate a simple downloadable
+            model.
+          </p>
+        </a>
+
+        <!-- Simulation Results (placeholder) -->
+        <a
+          class="card opt-card block"
+          data-mode="simulation"
+          href="simulation.html"
+          role="link"
+          tabindex="0"
+        >
+          <div class="opt-title">
+            <h2 class="text-xl font-semibold">Simulation Results</h2>
+            <span class="badge">Soon</span>
+          </div>
+          <p class="mt-2 text-sm opacity-80">
+            Preview KPIs from simulation outputs directly in the browser.
+          </p>
+        </a>
+      </div>
+
+      <!-- Actions -->
+      <div class="mt-6 flex">
         <button onclick="resetAll()" class="btn btn-secondary">Reset</button>
       </div>
     </div>
 
+    <!-- Scripts -->
     <script src="assets/js/state.js"></script>
     <script src="assets/js/ui.js"></script>
     <script src="assets/js/shortlink.js"></script>
     <script src="assets/js/version.js"></script>
+    <script>
+      (function () {
+        const suffix = window.location.search || ""; // preserve ?s=
+        const cards = Array.from(
+          document.querySelectorAll("#options .opt-card")
+        );
+
+        // Append ?s= suffix to all links and store chosen mode before navigating
+        cards.forEach((card) => {
+          // ensure href keeps short link
+          const baseHref = card.getAttribute("href") || "#";
+          card.setAttribute("href", baseHref + suffix);
+
+          // click: save mode
+          card.addEventListener("click", () => {
+            const mode = card.dataset.mode || "recommendation";
+            if (window.App) App.State.set({ mode });
+          });
+
+          // keyboard: Enter/Space acts like click
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              card.click();
+            }
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
