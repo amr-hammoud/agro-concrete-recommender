@@ -17,7 +17,6 @@ const State = {
     localStorage.removeItem(window.APP_STATE_KEY);
   },
 
-  // deep-link helpers (short keys)
   toQuery(obj) {
     const map = {
       country: "c",

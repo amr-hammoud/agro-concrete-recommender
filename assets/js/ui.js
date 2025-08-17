@@ -1,4 +1,3 @@
-// assets/js/ui.js
 (function () {
   const steps = [
     { id: "Context", href: "context.html" },
@@ -11,7 +10,6 @@
     const root = document.getElementById("app-header");
     if (!root) return;
 
-    // keep whatever query is on the URL (works for ?s= short links)
     const suffix = window.location.search || "";
     const steps = [
       { id: "Context", href: "context.html" },

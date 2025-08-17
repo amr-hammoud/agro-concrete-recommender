@@ -8,7 +8,6 @@
   const countries = ctxData.countries || [];
   const L = Short.buildLookup({ countries, typologiesTable: typData });
 
-  // Restore (prefer short code if present)
   const params = new URLSearchParams(location.search);
   const sCode = params.get("s");
   const restored = sCode
@@ -16,13 +15,11 @@
     : App.State.syncFromURL();
 
   const s = { ...App.State.get(), ...restored };
-  App.State.set(s); // normalize
+  App.State.set(s);
 
-  // Emit compact URL for this page too (idempotent)
   const code = Short.encodeShort(s, L);
   Short.writeURLWithCode(code);
 
-  // Summary
   document.getElementById("summary").innerHTML = `
     <h2 class="text-xl font-semibold mb-4">Your Selection</h2>
     <div class="grid md:grid-cols-2 gap-2 text-sm">
@@ -42,7 +39,6 @@
     </div>
   `;
 
-  // Recommendation (Typology + Industrial tier)
   const row = (typData.typologies || []).find((t) => t.typology === s.typology);
   const rec = row
     ? {
@@ -67,7 +63,6 @@
     <p>No matching recommendation found. Please choose a Typology and Industrial Tier.</p>
   `;
 
-  // Copy Link (already short)
   const btnCopy = document.getElementById("copylink");
   if (btnCopy) {
     btnCopy.addEventListener("click", async () => {
@@ -81,7 +76,6 @@
     });
   }
 
-  // Sticky nav back/home
   const back = "approach.html" + (code ? "?s=" + code : "");
   const home = "index.html" + (code ? "?s=" + code : "");
   UI.setStickyLinks({ back, next: home });

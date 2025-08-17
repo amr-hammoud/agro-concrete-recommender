@@ -1,10 +1,8 @@
-// assets/js/footer.js
 (async function () {
   const mount = document.getElementById("data-footer");
   if (!mount) return;
 
   function getVersion(obj) {
-    // Try common places: meta.version or dataVersion
     return obj?.meta?.version || obj?.dataVersion || null;
   }
   function count(arr) {

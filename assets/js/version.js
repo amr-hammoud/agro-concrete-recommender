@@ -1,7 +1,6 @@
 (function () {
-  const APP_VERSION = "1.2.0";
+  const APP_VERSION = "1.3.0";
 
-  // expose for debugging if needed
   window.APP_VERSION = APP_VERSION;
   document.documentElement.setAttribute("data-version", APP_VERSION);
 

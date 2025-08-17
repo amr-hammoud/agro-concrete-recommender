@@ -177,7 +177,7 @@ body {
 /* tiny version badge */
 .version-badge {
   position: fixed;
-  left: 12px; /* bottom-left to avoid the sticky footer nav */
+  left: 12px;
   bottom: 12px;
   z-index: 60;
   background: var(--brown);
@@ -189,11 +189,13 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   opacity: 0.9;
 }
+
 @media (max-width: 640px) {
   .version-badge {
-    bottom: 64px;
-  } /* lift a bit above the mobile sticky nav */
+    display: none !important;
+  }
 }
+
 @media print {
   .version-badge {
     display: none !important;

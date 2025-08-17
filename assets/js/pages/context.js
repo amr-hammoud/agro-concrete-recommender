@@ -1,7 +1,6 @@
 (async function () {
   UI.renderHeader("Context");
 
-  // Load both datasets so we can fully preserve/emit the short link
   const [ctxData, typData] = await Promise.all([
     App.loadJSON("assets/data/countries.json"),
     App.loadJSON("assets/data/typology.json"),
@@ -23,7 +22,6 @@
   const params = new URLSearchParams(location.search);
   const sCode = params.get("s");
 
-  // Start from URL short code if present; otherwise from (legacy) query or LocalStorage
   let state = sCode
     ? { ...App.State.get(), ...Short.decodeShort(sCode, L) }
     : App.State.syncFromURL();
@@ -33,7 +31,6 @@
       .concat(list.map((v) => `<option>${v}</option>`))
       .join("");
 
-  // Populate Country first
   els.country.innerHTML = options(countries.map((c) => c.name).sort());
 
   function populateForCountry(name) {
@@ -44,7 +41,6 @@
     els.cons.innerHTML = options(c?.construction_methods);
   }
 
-  // Restore selections
   if (state.country) els.country.value = state.country;
   populateForCountry(els.country.value);
   if (state.climate) els.climate.value = state.climate;
@@ -80,16 +76,13 @@
     const backHref = "index.html" + (code ? "?s=" + code : "");
     const nextHref = "typology.html" + (code ? "?s=" + code : "");
 
-    // push compact URL for this page
     Short.writeURLWithCode(code);
 
-    // sticky
     if (els.stickyBack) {
       els.stickyBack.setAttribute("href", backHref);
       els.stickyBack.classList.remove("is-disabled");
     }
 
-    // gate "Next"
     if (isValid()) {
       els.next.setAttribute("href", nextHref);
       els.next.classList.remove("is-disabled");

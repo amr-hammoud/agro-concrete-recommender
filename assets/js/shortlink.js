@@ -1,4 +1,3 @@
-// assets/js/shortlink.js
 (function () {
   const COMPONENTS = [
     "Floor Structures",
@@ -20,12 +19,11 @@
   function _idx(arr, val) {
     const i = arr.indexOf(val);
     return i >= 0 ? i + 1 : 0;
-  } // 1-based
+  }
   function _pick(arr, i) {
     return i > 0 && i <= arr.length ? arr[i - 1] : undefined;
   }
 
-  // Build lookup arrays once per page (pass what you have on that page)
   function buildLookup({ countries, typologiesTable }) {
     const typologies = typologiesTable
       ? _uniq((typologiesTable.typologies || []).map((t) => t.typology))
@@ -40,7 +38,6 @@
     return { countries, typologies, approaches, components: COMPONENTS };
   }
 
-  // Encode a state object into "c-cl-a-f-co-t-comp-ar-ind" (all 1-based integers, 0 = empty)
   function encodeShort(state, L) {
     const cList = _countriesOrdered(L.countries);
     const cIdx = _idx(cList, state.country || "");
@@ -71,7 +68,6 @@
     );
   }
 
-  // Decode "s" back into a (partial) state. Only decodes fields you provided lookups for.
   function decodeShort(code, L) {
     const parts = (code || "").split("-").map((x) => parseInt(x, 10) || 0);
     while (parts.length < 9) parts.push(0);
