@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Approach • Agro-Waste Recommender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+  </head>
+  <body class="min-h-screen brand-bg">
+    <div id="app-header"></div>
+    <div id="toast-root" aria-live="polite"></div>
+
+    <div class="max-w-3xl mx-auto py-10 px-4">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-2xl font-bold brand-brown">Approach</h1>
+        <button onclick="resetAll()" class="px-3 py-2 rounded border">
+          Reset
+        </button>
+      </div>
+
+      <div class="card space-y-4">
+        <label class="block">
+          <span class="text-sm font-semibold">Architectural Approach</span>
+          <select id="arch" class="mt-1 w-full border rounded p-2"></select>
+        </label>
+
+        <label class="block">
+          <span class="text-sm font-semibold">Industrial Approach Tier</span>
+          <select id="industrial" class="mt-1 w-full border rounded p-2">
+            <option value="">-- Select --</option>
+            <option value="low">Low-tech</option>
+            <option value="medium">Medium-tech</option>
+            <option value="high">High-tech</option>
+          </select>
+        </label>
+
+        <div class="flex justify-between">
+          <a id="back" class="px-4 py-2 rounded border">Back</a>
+          <a id="next" class="px-4 py-2 rounded bg-[var(--brown)] text-white"
+            >Next</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <nav class="sticky-nav sm:hidden" id="sticky-nav">
+      <div class="bar">
+        <a id="sticky-back">Back</a>
+        <a id="sticky-next" class="next">Next</a>
+      </div>
+    </nav>
+
+    <script src="assets/js/state.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/pages/approach.js"></script>
+  </body>
+</html>

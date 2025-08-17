@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Agro-Waste Recommender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <script defer src="assets/js/state.js"></script>
+  </head>
+  <body class="min-h-screen brand-bg">
+    <div class="max-w-4xl mx-auto py-10 px-4">
+      <header class="mb-8 text-center">
+        <h1 class="text-3xl font-bold brand-brown">
+          Agro-Waste Material Recommender
+        </h1>
+        <p class="text-sm mt-2">Context → Typology → Approach → Result</p>
+      </header>
+
+      <a href="context.html" class="card block hover:shadow-lg">
+        <h2 class="text-xl font-semibold mb-2">Start Recommendation</h2>
+        <p>Begin with your Context.</p>
+      </a>
+
+      <div class="mt-6 text-right">
+        <button
+          onclick="resetAll()"
+          class="inline-flex items-center px-4 py-2 rounded border"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

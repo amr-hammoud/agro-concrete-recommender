@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Context • Agro-Waste Recommender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+  </head>
+  <body class="min-h-screen brand-bg">
+    <div id="app-header"></div>
+    <div id="toast-root" aria-live="polite"></div>
+
+    <div class="max-w-3xl mx-auto py-10 px-4">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-2xl font-bold brand-brown">Context</h1>
+        <button onclick="resetAll()" class="px-3 py-2 rounded border">
+          Reset
+        </button>
+      </div>
+
+      <div class="card space-y-4">
+        <label class="block">
+          <span class="text-sm font-semibold">Country</span>
+          <select id="country" class="mt-1 w-full border rounded p-2"></select>
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Climate</span>
+          <select id="climate" class="mt-1 w-full border rounded p-2"></select>
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Agricultural Activity</span>
+          <select id="agri" class="mt-1 w-full border rounded p-2"></select>
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Food Industry</span>
+          <select id="food" class="mt-1 w-full border rounded p-2"></select>
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Conventional Construction</span>
+          <select id="cons" class="mt-1 w-full border rounded p-2"></select>
+        </label>
+
+        <div class="flex justify-end gap-2">
+          <!-- Next link includes deep link to carry state forward (typology page to be added next) -->
+          <a id="next" class="px-4 py-2 rounded bg-[var(--brown)] text-white"
+            >Next</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <nav class="sticky-nav sm:hidden" id="sticky-nav">
+      <div class="bar">
+        <a id="sticky-back">Back</a>
+        <a id="sticky-next" class="next">Next</a>
+      </div>
+    </nav>
+
+    <script src="assets/js/state.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/pages/context.js"></script>
+  </body>
+</html>

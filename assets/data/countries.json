@@ -1,0 +1,1569 @@
+{
+  "countries": [
+    {
+      "id": "united_states",
+      "name": "United States",
+      "region": "North America",
+      "climates": [
+        "Humid continental",
+        "Humid subtropical",
+        "Mediterranean (Cfa/Dfa/Csa)"
+      ],
+      "agriculture": [
+        "Corn",
+        "Soybeans",
+        "Wheat",
+        "Beef",
+        "Dairy"
+      ],
+      "food_industries": [
+        "Processed foods",
+        "Meat packing",
+        "Dairy",
+        "Soft drinks",
+        "Corn-based industries"
+      ],
+      "construction_methods": [
+        "Timber framing in residential; Steel & Reinforced concrete (RC) in commercial; Light wood studs"
+      ]
+    },
+    {
+      "id": "canada",
+      "name": "Canada",
+      "region": "North America",
+      "climates": [
+        "Subarctic",
+        "Humid continental (Dfc/Dfb)"
+      ],
+      "agriculture": [
+        "Wheat",
+        "Canola",
+        "Barley",
+        "Dairy"
+      ],
+      "food_industries": [
+        "Dairy",
+        "Meat processing",
+        "Maple syrup",
+        "Breweries"
+      ],
+      "construction_methods": [
+        "Light wood framing; RC & steel in urban"
+      ]
+    },
+    {
+      "id": "mexico",
+      "name": "Mexico",
+      "region": "North America",
+      "climates": [
+        "Tropical savanna",
+        "Arid/Steppe (Aw/BWh/BSh)"
+      ],
+      "agriculture": [
+        "Maize",
+        "Avocado",
+        "Agave (Tequila)",
+        "Berries"
+      ],
+      "food_industries": [
+        "Tequila/Mezcal",
+        "Beer",
+        "Avocado processing",
+        "Confectionery"
+      ],
+      "construction_methods": [
+        "Masonry (CMU/brick)",
+        "RC frames",
+        "Adobe in rural"
+      ]
+    },
+    {
+      "id": "brazil",
+      "name": "Brazil",
+      "region": "South America",
+      "climates": [
+        "Tropical rainforest/savanna (Af/Am/Aw)"
+      ],
+      "agriculture": [
+        "Soybeans",
+        "Coffee",
+        "Sugarcane",
+        "Beef"
+      ],
+      "food_industries": [
+        "Sugar/ethanol",
+        "Coffee roasting",
+        "Meatpacking",
+        "Chocolate"
+      ],
+      "construction_methods": [
+        "RC frames & slabs; Masonry infill; Timber in Amazon"
+      ]
+    },
+    {
+      "id": "argentina",
+      "name": "Argentina",
+      "region": "South America",
+      "climates": [
+        "Temperate",
+        "Patagonian steppe (Cfa/BSk)"
+      ],
+      "agriculture": [
+        "Soybeans",
+        "Beef",
+        "Wheat",
+        "Maize"
+      ],
+      "food_industries": [
+        "Beef packing",
+        "Dairy",
+        "Wine"
+      ],
+      "construction_methods": [
+        "RC & masonry; Steel in industrial"
+      ]
+    },
+    {
+      "id": "chile",
+      "name": "Chile",
+      "region": "South America",
+      "climates": [
+        "Mediterranean",
+        "Desert",
+        "Oceanic (Csa/BWk/Cfb)"
+      ],
+      "agriculture": [
+        "Grapes (wine)",
+        "Fruit",
+        "Salmon aquaculture"
+      ],
+      "food_industries": [
+        "Wine",
+        "Fruit packing",
+        "Salmon processing"
+      ],
+      "construction_methods": [
+        "RC & confined masonry; Timber in south"
+      ]
+    },
+    {
+      "id": "colombia",
+      "name": "Colombia",
+      "region": "South America",
+      "climates": [
+        "Tropical rainforest/savanna (Af/Aw)"
+      ],
+      "agriculture": [
+        "Coffee",
+        "Bananas",
+        "Flowers"
+      ],
+      "food_industries": [
+        "Coffee roasting",
+        "Sugar",
+        "Chocolate"
+      ],
+      "construction_methods": [
+        "Confined masonry; RC frames"
+      ]
+    },
+    {
+      "id": "peru",
+      "name": "Peru",
+      "region": "South America",
+      "climates": [
+        "Arid coastal",
+        "Tropical rainforest (BWk/Af)"
+      ],
+      "agriculture": [
+        "Avocado",
+        "Asparagus",
+        "Quinoa",
+        "Fisheries"
+      ],
+      "food_industries": [
+        "Seafood canning",
+        "Avocado/asparagus packing"
+      ],
+      "construction_methods": [
+        "RC & confined masonry; Adobe (quincha) traditional"
+      ]
+    },
+    {
+      "id": "ecuador",
+      "name": "Ecuador",
+      "region": "South America",
+      "climates": [
+        "Tropical rainforest/montane (Af/Am)"
+      ],
+      "agriculture": [
+        "Bananas",
+        "Cacao",
+        "Shrimp"
+      ],
+      "food_industries": [
+        "Banana packing",
+        "Cocoa/chocolate",
+        "Shrimp processing"
+      ],
+      "construction_methods": [
+        "Masonry & RC; Timber in rainforest areas"
+      ]
+    },
+    {
+      "id": "bolivia",
+      "name": "Bolivia",
+      "region": "South America",
+      "climates": [
+        "Highland (var.)",
+        "Tropical savanna (Aw)"
+      ],
+      "agriculture": [
+        "Soybeans",
+        "Quinoa",
+        "Brazil nuts"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "Masonry & RC; Adobe in highlands"
+      ]
+    },
+    {
+      "id": "uruguay",
+      "name": "Uruguay",
+      "region": "South America",
+      "climates": [
+        "Humid subtropical (Cfa)"
+      ],
+      "agriculture": [
+        "Beef",
+        "Wool",
+        "Soybeans"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC & masonry; Timber growing"
+      ]
+    },
+    {
+      "id": "paraguay",
+      "name": "Paraguay",
+      "region": "South America",
+      "climates": [
+        "Humid subtropical/Tropical savanna (Cfa/Aw)"
+      ],
+      "agriculture": [
+        "Soybeans",
+        "Beef",
+        "Maize"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "Masonry & RC; Adobe in rural"
+      ]
+    },
+    {
+      "id": "venezuela",
+      "name": "Venezuela",
+      "region": "South America",
+      "climates": [
+        "Tropical savanna (Aw)"
+      ],
+      "agriculture": [
+        "Cacao",
+        "Coffee",
+        "Maize"
+      ],
+      "food_industries": [],
+      "construction_methods": []
+    },
+    {
+      "id": "united_kingdom",
+      "name": "United Kingdom",
+      "region": "Europe",
+      "climates": [
+        "Oceanic (Cfb)"
+      ],
+      "agriculture": [
+        "Barley",
+        "Wheat",
+        "Rapeseed",
+        "Lamb"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "Masonry cavity walls; Timber roofs; Steel/RC in commercial"
+      ]
+    },
+    {
+      "id": "ireland",
+      "name": "Ireland",
+      "region": "Europe",
+      "climates": [
+        "Oceanic (Cfb)"
+      ],
+      "agriculture": [
+        "Dairy",
+        "Beef",
+        "Barley",
+        "Potatoes"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "Masonry & timber frame; RC in commercial"
+      ]
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "region": "Europe",
+      "climates": [
+        "Oceanic/Mediterranean/Continental (Cfb/Csa/Dfb)"
+      ],
+      "agriculture": [
+        "Wine grapes",
+        "Wheat",
+        "Dairy",
+        "Sugar beet"
+      ],
+      "food_industries": [
+        "Wine",
+        "Cheese",
+        "Bakery/pastry"
+      ],
+      "construction_methods": [
+        "Masonry & RC; Timber roofs; Stone historic"
+      ]
+    },
+    {
+      "id": "spain",
+      "name": "Spain",
+      "region": "Europe",
+      "climates": [
+        "Mediterranean",
+        "Semi-arid (Csa/BSk)"
+      ],
+      "agriculture": [
+        "Olives/Olive oil",
+        "Citrus",
+        "Wine grapes"
+      ],
+      "food_industries": [
+        "Olive oil",
+        "Wine",
+        "Cured meats"
+      ],
+      "construction_methods": [
+        "RC frames & hollow clay block; Masonry"
+      ]
+    },
+    {
+      "id": "portugal",
+      "name": "Portugal",
+      "region": "Europe",
+      "climates": [
+        "Mediterranean",
+        "Oceanic (Csa/Csb/Cfb)"
+      ],
+      "agriculture": [
+        "Cork",
+        "Olives",
+        "Wine grapes"
+      ],
+      "food_industries": [
+        "Wine (Port)",
+        "Canned fish",
+        "Olive oil"
+      ],
+      "construction_methods": [
+        "RC & masonry; Timber roofs"
+      ]
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "region": "Europe",
+      "climates": [
+        "Mediterranean (Csa/Csb)",
+        "Alpine (Dfb/ET)"
+      ],
+      "agriculture": [
+        "Wine grapes",
+        "Olives",
+        "Tomatoes",
+        "Dairy"
+      ],
+      "food_industries": [
+        "Pasta",
+        "Olive oil",
+        "Cheese",
+        "Wine",
+        "Cured meats"
+      ],
+      "construction_methods": [
+        "RC & masonry; Stone/masonry historic"
+      ]
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "region": "Europe",
+      "climates": [
+        "Temperate oceanic/continental (Cfb/Dfb)"
+      ],
+      "agriculture": [
+        "Pork",
+        "Dairy",
+        "Wheat",
+        "Barley"
+      ],
+      "food_industries": [
+        "Beer",
+        "Bread",
+        "Meat processing",
+        "Confectionery"
+      ],
+      "construction_methods": [
+        "Masonry blocks",
+        "RC & steel; Timber (CLT) advanced"
+      ]
+    },
+    {
+      "id": "netherlands",
+      "name": "Netherlands",
+      "region": "Europe",
+      "climates": [
+        "Oceanic (Cfb)"
+      ],
+      "agriculture": [
+        "Horticulture (greenhouses)",
+        "Dairy",
+        "Potatoes"
+      ],
+      "food_industries": [
+        "Dairy processing",
+        "Horticulture/packhouses"
+      ],
+      "construction_methods": [
+        "Masonry",
+        "RC piles",
+        "Steel; Timber modular growing"
+      ]
+    },
+    {
+      "id": "belgium",
+      "name": "Belgium",
+      "region": "Europe",
+      "climates": [
+        "Oceanic (Cfb)"
+      ],
+      "agriculture": [
+        "Potatoes",
+        "Sugar beet",
+        "Horticulture"
+      ],
+      "food_industries": [
+        "Beer",
+        "Chocolate",
+        "Potato processing (fries)"
+      ],
+      "construction_methods": [
+        "Masonry & RC; Timber roofs"
+      ]
+    },
+    {
+      "id": "switzerland",
+      "name": "Switzerland",
+      "region": "Europe",
+      "climates": [
+        "Alpine (Dfb/ET)",
+        "Oceanic (Cfb)"
+      ],
+      "agriculture": [
+        "Dairy",
+        "Cheese",
+        "Vineyards"
+      ],
+      "food_industries": [
+        "Chocolate",
+        "Cheese"
+      ],
+      "construction_methods": [
+        "RC & timber; Masonry in low-rise"
+      ]
+    },
+    {
+      "id": "austria",
+      "name": "Austria",
+      "region": "Europe",
+      "climates": [
+        "Humid continental/alpine (Dfb/ET)"
+      ],
+      "agriculture": [
+        "Dairy",
+        "Wheat",
+        "Barley",
+        "Vineyards"
+      ],
+      "food_industries": [
+        "Breweries",
+        "Meat & dairy"
+      ],
+      "construction_methods": [
+        "Timber (CLT) & masonry; RC"
+      ]
+    },
+    {
+      "id": "sweden",
+      "name": "Sweden",
+      "region": "Europe",
+      "climates": [
+        "Humid continental/subarctic (Dfb/Dfc)"
+      ],
+      "agriculture": [
+        "Barley",
+        "Oats",
+        "Forestry"
+      ],
+      "food_industries": [
+        "Dairy",
+        "Fisheries",
+        "Bakeries"
+      ],
+      "construction_methods": [
+        "Timber framing & CLT; RC in infrastructure"
+      ]
+    },
+    {
+      "id": "norway",
+      "name": "Norway",
+      "region": "Europe",
+      "climates": [
+        "Oceanic/subarctic (Cfb/Dfc)"
+      ],
+      "agriculture": [
+        "Aquaculture (salmon)",
+        "Dairy"
+      ],
+      "food_industries": [
+        "Salmon processing",
+        "Dairy"
+      ],
+      "construction_methods": [
+        "Timber (including glulam/CLT); RC & steel"
+      ]
+    },
+    {
+      "id": "finland",
+      "name": "Finland",
+      "region": "Europe",
+      "climates": [
+        "Humid continental/subarctic (Dfb/Dfc)"
+      ],
+      "agriculture": [
+        "Barley",
+        "Oats",
+        "Forestry"
+      ],
+      "food_industries": [
+        "Dairy",
+        "Bakeries"
+      ],
+      "construction_methods": [
+        "Timber & masonry; RC"
+      ]
+    },
+    {
+      "id": "denmark",
+      "name": "Denmark",
+      "region": "Europe",
+      "climates": [
+        "Oceanic (Cfb)"
+      ],
+      "agriculture": [
+        "Pork",
+        "Dairy",
+        "Barley"
+      ],
+      "food_industries": [
+        "Dairy (butter/cheese)",
+        "Pork processing"
+      ],
+      "construction_methods": [
+        "Masonry & RC; Timber in housing"
+      ]
+    },
+    {
+      "id": "poland",
+      "name": "Poland",
+      "region": "Europe",
+      "climates": [
+        "Humid continental (Dfb)"
+      ],
+      "agriculture": [
+        "Apples",
+        "Potatoes",
+        "Rye",
+        "Poultry"
+      ],
+      "food_industries": [
+        "Meat",
+        "Poultry",
+        "Apples/juice"
+      ],
+      "construction_methods": [
+        "Masonry (ceramic blocks)",
+        "RC slabs; Panelized"
+      ]
+    },
+    {
+      "id": "czechia",
+      "name": "Czechia",
+      "region": "Europe",
+      "climates": [
+        "Humid continental (Dfb)"
+      ],
+      "agriculture": [
+        "Barley (beer)",
+        "Wheat",
+        "Hops"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "Masonry & RC; Panelized systems"
+      ]
+    },
+    {
+      "id": "greece",
+      "name": "Greece",
+      "region": "Europe",
+      "climates": [
+        "Mediterranean (Csa)"
+      ],
+      "agriculture": [
+        "Olives/Olive oil",
+        "Feta/dairy",
+        "Citrus"
+      ],
+      "food_industries": [
+        "Olive oil",
+        "Feta/dairy",
+        "Canning"
+      ],
+      "construction_methods": [
+        "RC frames with masonry infill; Stone traditional"
+      ]
+    },
+    {
+      "id": "turkey",
+      "name": "Turkey",
+      "region": "Europe/Asia",
+      "climates": [
+        "Mediterranean/Continental/Steppe (Csa/Dsb/BSk)"
+      ],
+      "agriculture": [
+        "Hazelnuts",
+        "Wheat",
+        "Cotton",
+        "Fruits"
+      ],
+      "food_industries": [
+        "Hazelnut processing",
+        "Textiles/food",
+        "Sugar"
+      ],
+      "construction_methods": [
+        "RC frames & shear walls; Masonry infill"
+      ]
+    },
+    {
+      "id": "romania",
+      "name": "Romania",
+      "region": "Europe",
+      "climates": [
+        "Humid continental (Dfb)"
+      ],
+      "agriculture": [
+        "Sunflower",
+        "Maize",
+        "Wheat"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC & masonry; Panel blocks legacy"
+      ]
+    },
+    {
+      "id": "ukraine",
+      "name": "Ukraine",
+      "region": "Europe",
+      "climates": [
+        "Humid continental/steppe (Dfb/BSk)"
+      ],
+      "agriculture": [
+        "Wheat",
+        "Sunflower oil",
+        "Maize"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC panel systems; Masonry"
+      ]
+    },
+    {
+      "id": "morocco",
+      "name": "Morocco",
+      "region": "Africa",
+      "climates": [
+        "Mediterranean/Semi-arid (Csa/BSk)"
+      ],
+      "agriculture": [
+        "Olives",
+        "Citrus",
+        "Argan",
+        "Vegetables"
+      ],
+      "food_industries": [
+        "Canning (sardines)",
+        "Olive oil",
+        "Citrus packing"
+      ],
+      "construction_methods": [
+        "RC & masonry; Rammed earth (pisé) traditional"
+      ]
+    },
+    {
+      "id": "algeria",
+      "name": "Algeria",
+      "region": "Africa",
+      "climates": [
+        "Mediterranean/Desert (Csa/BWh)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Cereals",
+        "Olives"
+      ],
+      "food_industries": [
+        "Semolina/pasta",
+        "Olive oil",
+        "Dairy"
+      ],
+      "construction_methods": [
+        "RC & masonry; Adobe traditional"
+      ]
+    },
+    {
+      "id": "tunisia",
+      "name": "Tunisia",
+      "region": "Africa",
+      "climates": [
+        "Mediterranean/Semi-arid (Csa/BSk)"
+      ],
+      "agriculture": [
+        "Olives/Olive oil",
+        "Dates"
+      ],
+      "food_industries": [
+        "Olive oil",
+        "Dates packing",
+        "Canned tuna"
+      ],
+      "construction_methods": [
+        "RC & masonry; Stone/adobe"
+      ]
+    },
+    {
+      "id": "libya",
+      "name": "Libya",
+      "region": "Africa",
+      "climates": [
+        "Desert (BWh)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Barley (oases)"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC & masonry; Stone/adobe oases"
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "region": "Africa",
+      "climates": [
+        "Desert (BWh)"
+      ],
+      "agriculture": [
+        "Cotton",
+        "Rice",
+        "Wheat",
+        "Vegetables"
+      ],
+      "food_industries": [
+        "Sugar refining",
+        "Dairy",
+        "Flour milling",
+        "Canning"
+      ],
+      "construction_methods": [
+        "RC frames; Brick masonry"
+      ]
+    },
+    {
+      "id": "sudan",
+      "name": "Sudan",
+      "region": "Africa",
+      "climates": [
+        "Desert to savanna (BWh/Aw)"
+      ],
+      "agriculture": [
+        "Sorghum",
+        "Sesame",
+        "Gum arabic"
+      ],
+      "food_industries": [],
+      "construction_methods": []
+    },
+    {
+      "id": "ethiopia",
+      "name": "Ethiopia",
+      "region": "Africa",
+      "climates": [
+        "Highland tropical (Cwb/Aw)"
+      ],
+      "agriculture": [
+        "Coffee",
+        "Teff",
+        "Oilseeds"
+      ],
+      "food_industries": [
+        "Coffee roasting",
+        "Oilseeds",
+        "Breweries"
+      ],
+      "construction_methods": [
+        "Stone masonry",
+        "RC; Timber in highlands"
+      ]
+    },
+    {
+      "id": "kenya",
+      "name": "Kenya",
+      "region": "Africa",
+      "climates": [
+        "Tropical savanna (Aw)"
+      ],
+      "agriculture": [
+        "Tea",
+        "Coffee",
+        "Horticulture",
+        "Flowers"
+      ],
+      "food_industries": [
+        "Tea factories",
+        "Coffee",
+        "Horticulture packhouses"
+      ],
+      "construction_methods": [
+        "Masonry (stone blocks)",
+        "RC; Timber roofing"
+      ]
+    },
+    {
+      "id": "tanzania",
+      "name": "Tanzania",
+      "region": "Africa",
+      "climates": [
+        "Tropical savanna (Aw)"
+      ],
+      "agriculture": [
+        "Coffee",
+        "Tea",
+        "Cashew"
+      ],
+      "food_industries": [],
+      "construction_methods": []
+    },
+    {
+      "id": "nigeria",
+      "name": "Nigeria",
+      "region": "Africa",
+      "climates": [
+        "Tropical savanna/rainforest (Aw/Af)"
+      ],
+      "agriculture": [
+        "Cassava",
+        "Yams",
+        "Cocoa",
+        "Oil palm"
+      ],
+      "food_industries": [
+        "Cassava processing (garri)",
+        "Cocoa",
+        "Breweries"
+      ],
+      "construction_methods": [
+        "Concrete block masonry; RC"
+      ]
+    },
+    {
+      "id": "ghana",
+      "name": "Ghana",
+      "region": "Africa",
+      "climates": [
+        "Tropical savanna (Aw)"
+      ],
+      "agriculture": [
+        "Cocoa",
+        "Cassava",
+        "Plantain"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "Concrete block",
+        "RC; Timber roofs"
+      ]
+    },
+    {
+      "id": "ivory_coast",
+      "name": "Ivory Coast",
+      "region": "Africa",
+      "climates": [
+        "Tropical rainforest/savanna (Af/Aw)"
+      ],
+      "agriculture": [
+        "Cocoa",
+        "Cashew",
+        "Rubber"
+      ],
+      "food_industries": [],
+      "construction_methods": []
+    },
+    {
+      "id": "south_africa",
+      "name": "South Africa",
+      "region": "Africa",
+      "climates": [
+        "Varied: Mediterranean",
+        "Steppe",
+        "Oceanic (Csa/BSk/Cfb)"
+      ],
+      "agriculture": [
+        "Wine grapes",
+        "Maize",
+        "Citrus"
+      ],
+      "food_industries": [
+        "Wine",
+        "Citrus packing",
+        "Meat processing",
+        "Breweries"
+      ],
+      "construction_methods": [
+        "Brick/CMU masonry; RC & steel"
+      ]
+    },
+    {
+      "id": "eritrea",
+      "name": "Eritrea",
+      "region": "Africa",
+      "climates": [
+        "Arid/semi-arid (BWh/BSk)"
+      ],
+      "agriculture": [
+        "Sorghum",
+        "Millet",
+        "Livestock"
+      ],
+      "food_industries": [],
+      "construction_methods": []
+    },
+    {
+      "id": "saudi_arabia",
+      "name": "Saudi Arabia",
+      "region": "Middle East",
+      "climates": [
+        "Desert (BWh)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Poultry",
+        "Vegetables (greenhouse)"
+      ],
+      "food_industries": [
+        "Dairy",
+        "Poultry",
+        "Dates processing",
+        "Bottled water"
+      ],
+      "construction_methods": [
+        "RC & CMU masonry; Steel in industrial"
+      ]
+    },
+    {
+      "id": "united_arab_emirates",
+      "name": "United Arab Emirates",
+      "region": "Middle East",
+      "climates": [
+        "Desert (BWh)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Greenhouse vegetables"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC & steel; CMU infill"
+      ]
+    },
+    {
+      "id": "qatar",
+      "name": "Qatar",
+      "region": "Middle East",
+      "climates": [
+        "Desert (BWh)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Greenhouse vegetables"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC & steel; CMU"
+      ]
+    },
+    {
+      "id": "kuwait",
+      "name": "Kuwait",
+      "region": "Middle East",
+      "climates": [
+        "Desert (BWh)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Greenhouse vegetables"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC & CMU; Steel industrial"
+      ]
+    },
+    {
+      "id": "bahrain",
+      "name": "Bahrain",
+      "region": "Middle East",
+      "climates": [
+        "Desert (BWh)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Fish"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC & CMU; Steel"
+      ]
+    },
+    {
+      "id": "oman",
+      "name": "Oman",
+      "region": "Middle East",
+      "climates": [
+        "Desert/Steppe (BWh/BSk)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Fish",
+        "Limes"
+      ],
+      "food_industries": [],
+      "construction_methods": [
+        "RC & masonry; Stone/adobe traditional"
+      ]
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan",
+      "region": "Middle East",
+      "climates": [
+        "Steppe/Desert (BSk/BWh)"
+      ],
+      "agriculture": [
+        "Olives",
+        "Vegetables",
+        "Citrus"
+      ],
+      "food_industries": [
+        "Olive oil",
+        "Canning",
+        "Confectionery"
+      ],
+      "construction_methods": [
+        "RC frames & stone masonry"
+      ]
+    },
+    {
+      "id": "lebanon",
+      "name": "Lebanon",
+      "region": "Middle East",
+      "climates": [
+        "Mediterranean (Csa)"
+      ],
+      "agriculture": [
+        "Olives",
+        "Citrus",
+        "Grapes",
+        "Tobacco"
+      ],
+      "food_industries": [
+        "Olive oil",
+        "Confectionery",
+        "Wine",
+        "Arak"
+      ],
+      "construction_methods": [
+        "RC frames with stone block walls"
+      ]
+    },
+    {
+      "id": "israel",
+      "name": "Israel",
+      "region": "Middle East",
+      "climates": [
+        "Mediterranean/Steppe/Desert (Csa/BSk/BWh)"
+      ],
+      "agriculture": [
+        "Citrus",
+        "Avocado",
+        "Horticulture",
+        "Dairy"
+      ],
+      "food_industries": [
+        "Citrus packing",
+        "Dairy",
+        "Processed foods"
+      ],
+      "construction_methods": [
+        "RC & CMU; Stone cladding"
+      ]
+    },
+    {
+      "id": "iraq",
+      "name": "Iraq",
+      "region": "Middle East",
+      "climates": [
+        "Desert/steppe (BWh/BSk)"
+      ],
+      "agriculture": [
+        "Dates",
+        "Wheat",
+        "Barley"
+      ],
+      "food_industries": [
+        "Dates processing",
+        "Flour milling"
+      ],
+      "construction_methods": [
+        "RC & CMU; Adobe historically"
+      ]
+    },
+    {
+      "id": "iran",
+      "name": "Iran",
+      "region": "Middle East",
+      "climates": [
+        "Steppe/Desert/Highland (BSk/BWk)"
+      ],
+      "agriculture": [
+        "Pistachios",
+        "Saffron",
+        "Wheat"
+      ],
+      "food_industries": [
+        "Pistachio processing",
+        "Saffron",
+        "Sugar"
+      ],
+      "construction_methods": [
+        "RC",
+        "Steel; Masonry; Adobe/earth in rural"
+      ]
+    },
+    {
+      "id": "yemen",
+      "name": "Yemen",
+      "region": "Middle East",
+      "climates": [
+        "Desert/Steppe/Highland (BWh/BSk)"
+      ],
+      "agriculture": [
+        "Coffee (mocha)",
+        "Qat",
+        "Sorghum"
+      ],
+      "food_industries": [],
+      "construction_methods": []
+    },
+    {
+      "id": "syria",
+      "name": "Syria",
+      "region": "Middle East",
+      "climates": [
+        "Mediterranean/Steppe (Csa/BSk)"
+      ],
+      "agriculture": [
+        "Wheat",
+        "Cotton",
+        "Olives"
+      ],
+      "food_industries": [],
+      "construction_methods": []
+    },
+    {
+      "id": "india",
+      "name": "India",
+      "region": "Asia",
+      "climates": [
+        "Tropical monsoon/steppe (Am/Aw/BSk)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Wheat",
+        "Sugarcane",
+        "Dairy",
+        "Spices"
+      ],
+      "food_industries": [
+        "Dairy",
+        "Sugar",
+        "Rice mills",
+        "Spices"
+      ],
+      "construction_methods": [
+        "RC & brick masonry; Stone; Timber in NE"
+      ]
+    },
+    {
+      "id": "pakistan",
+      "name": "Pakistan",
+      "region": "Asia",
+      "climates": [
+        "Arid/Steppe (BWh/BSk)"
+      ],
+      "agriculture": [
+        "Wheat",
+        "Cotton",
+        "Rice",
+        "Sugarcane"
+      ],
+      "food_industries": [
+        "Textiles-linked foods",
+        "Sugar",
+        "Flour milling"
+      ],
+      "construction_methods": [
+        "Brick masonry & RC; Stone in north"
+      ]
+    },
+    {
+      "id": "bangladesh",
+      "name": "Bangladesh",
+      "region": "Asia",
+      "climates": [
+        "Tropical monsoon (Am)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Jute",
+        "Fish"
+      ],
+      "food_industries": [
+        "Rice mills",
+        "Jute goods",
+        "Fisheries"
+      ],
+      "construction_methods": [
+        "Brick masonry & RC"
+      ]
+    },
+    {
+      "id": "sri_lanka",
+      "name": "Sri Lanka",
+      "region": "Asia",
+      "climates": [
+        "Tropical rainforest/monsoon (Af/Am)"
+      ],
+      "agriculture": [
+        "Tea",
+        "Rubber",
+        "Coconut"
+      ],
+      "food_industries": [
+        "Tea processing",
+        "Coconut products"
+      ],
+      "construction_methods": [
+        "RC & brick/block; Timber roofs"
+      ]
+    },
+    {
+      "id": "nepal",
+      "name": "Nepal",
+      "region": "Asia",
+      "climates": [
+        "Subtropical/Alpine (Cwa/ET)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Maize",
+        "Millet"
+      ],
+      "food_industries": [
+        "Tea",
+        "Rice mills"
+      ],
+      "construction_methods": [
+        "Stone/brick masonry; RC frames"
+      ]
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "region": "Asia",
+      "climates": [
+        "Humid subtropical/continental/desert (Cfa/Dfa/BWk)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Wheat",
+        "Maize",
+        "Pork"
+      ],
+      "food_industries": [
+        "Grain processing",
+        "Pork",
+        "Soy",
+        "Tea"
+      ],
+      "construction_methods": [
+        "RC & steel; Masonry; Rammed earth historic"
+      ]
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "region": "Asia",
+      "climates": [
+        "Humid temperate (Cfa/Cfb/Dfa)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Fisheries",
+        "Horticulture"
+      ],
+      "food_industries": [
+        "Seafood processing",
+        "Breweries (sake/beer)",
+        "Rice"
+      ],
+      "construction_methods": [
+        "RC & steel; Timber traditional (post & beam)"
+      ]
+    },
+    {
+      "id": "south_korea",
+      "name": "South Korea",
+      "region": "Asia",
+      "climates": [
+        "Humid continental/subtropical (Dwa/Cfa)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Horticulture",
+        "Fisheries"
+      ],
+      "food_industries": [
+        "Seafood",
+        "Kimchi/fermentation",
+        "Breweries"
+      ],
+      "construction_methods": [
+        "RC & steel; Masonry infill"
+      ]
+    },
+    {
+      "id": "vietnam",
+      "name": "Vietnam",
+      "region": "Asia",
+      "climates": [
+        "Tropical monsoon (Am)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Coffee",
+        "Pepper"
+      ],
+      "food_industries": [
+        "Rice mills",
+        "Coffee",
+        "Seafood"
+      ],
+      "construction_methods": [
+        "RC frames & brick masonry"
+      ]
+    },
+    {
+      "id": "thailand",
+      "name": "Thailand",
+      "region": "Asia",
+      "climates": [
+        "Tropical savanna/monsoon (Aw/Am)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Rubber",
+        "Sugar"
+      ],
+      "food_industries": [
+        "Rice mills",
+        "Sugar",
+        "Seafood",
+        "Canned fruit"
+      ],
+      "construction_methods": [
+        "RC & masonry; Timber rural"
+      ]
+    },
+    {
+      "id": "malaysia",
+      "name": "Malaysia",
+      "region": "Asia",
+      "climates": [
+        "Tropical rainforest (Af)"
+      ],
+      "agriculture": [
+        "Palm oil",
+        "Rubber",
+        "Rice"
+      ],
+      "food_industries": [
+        "Palm oil refining",
+        "Rubber",
+        "Cocoa"
+      ],
+      "construction_methods": [
+        "RC & steel; Timber in Borneo"
+      ]
+    },
+    {
+      "id": "indonesia",
+      "name": "Indonesia",
+      "region": "Asia",
+      "climates": [
+        "Tropical rainforest/monsoon (Af/Am)"
+      ],
+      "agriculture": [
+        "Palm oil",
+        "Rice",
+        "Coffee"
+      ],
+      "food_industries": [
+        "Palm oil refining",
+        "Coffee",
+        "Cocoa",
+        "Fisheries"
+      ],
+      "construction_methods": [
+        "RC & masonry; Timber/bamboo traditional"
+      ]
+    },
+    {
+      "id": "philippines",
+      "name": "Philippines",
+      "region": "Asia",
+      "climates": [
+        "Tropical rainforest/monsoon (Af/Am)"
+      ],
+      "agriculture": [
+        "Rice",
+        "Coconut",
+        "Bananas"
+      ],
+      "food_industries": [
+        "Coconut products",
+        "Banana packing",
+        "Canned fish"
+      ],
+      "construction_methods": [
+        "RC & masonry; Timber coastal"
+      ]
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "region": "Asia",
+      "climates": [
+        "Tropical rainforest (Af)"
+      ],
+      "agriculture": [
+        "Food re-exports",
+        "Aquaculture"
+      ],
+      "food_industries": [
+        "Food logistics",
+        "Re-export",
+        "Bakeries"
+      ],
+      "construction_methods": [
+        "RC & steel high-rise; Precast"
+      ]
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "region": "Oceania",
+      "climates": [
+        "Desert/Steppe/Temperate (BWh/BSk/Cfb/Csa)"
+      ],
+      "agriculture": [
+        "Wheat",
+        "Beef",
+        "Wool",
+        "Wine"
+      ],
+      "food_industries": [
+        "Meat processing",
+        "Wine",
+        "Grain milling"
+      ],
+      "construction_methods": [
+        "Timber framing; Brick veneer; RC & steel"
+      ]
+    },
+    {
+      "id": "new_zealand",
+      "name": "New Zealand",
+      "region": "Oceania",
+      "climates": [
+        "Oceanic (Cfb)"
+      ],
+      "agriculture": [
+        "Dairy",
+        "Lamb",
+        "Kiwifruit",
+        "Wine"
+      ],
+      "food_industries": [
+        "Dairy processing",
+        "Meat",
+        "Wine"
+      ],
+      "construction_methods": [
+        "Timber framing; RC & steel"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "typologies": [
+    {
+      "typology": "Floor Structures",
+      "space_requirements": [
+        "Coating",
+        "Thermal"
+      ],
+      "standards": "Technical Standards",
+      "architectural_approach": "Performance-Based",
+      "testing_method": "Load-bearing, Compression Test",
+      "industrial": {
+        "low": "Low-Tech (grinding, pressing)",
+        "medium": "Medium-Tech (chemical treatment, lignin extraction)",
+        "high": "High-Tech (thermal/nano processing)"
+      },
+      "recommendations": {
+        "low": "Compressed earth blocks with agro fibers",
+        "medium": "Agro-fiber reinforced concrete",
+        "high": "Nano-engineered hempcrete"
+      }
+    },
+    {
+      "typology": "Opaque Facade",
+      "space_requirements": [
+        "Thermal",
+        "Acoustic"
+      ],
+      "standards": "Product Certification",
+      "architectural_approach": "Sustainable & Environmental",
+      "testing_method": "Thermal conductivity, Acoustic test",
+      "industrial": {
+        "low": "Straw bale walls",
+        "medium": "Fiber panels with chemical binders",
+        "high": "Nano-engineered composites"
+      },
+      "recommendations": {
+        "low": "Mud plaster finish with straw bale walls",
+        "medium": "Stabilized fiber panels",
+        "high": "Carbonized rice husk panels"
+      }
+    },
+    {
+      "typology": "Transparent Facades",
+      "space_requirements": [
+        "Lighting",
+        "Sunshine"
+      ],
+      "standards": "LEED/BREEAM",
+      "architectural_approach": "Aesthetic & Conceptual",
+      "testing_method": "Light transmission, Durability test",
+      "industrial": {
+        "low": "Lime-agro husk glazing",
+        "medium": "Bio-resin composites",
+        "high": "Nano-cellulose glazing"
+      },
+      "recommendations": {
+        "low": "Husk mixed with lime",
+        "medium": "Agro fiber composites",
+        "high": "Transparent bio-films"
+      }
+    },
+    {
+      "typology": "Roofs",
+      "space_requirements": [
+        "Thermal",
+        "Acoustic"
+      ],
+      "standards": "Technical Standards",
+      "architectural_approach": "Economic & Budget",
+      "testing_method": "Thermal resistance, Water absorption test",
+      "industrial": {
+        "low": "Thatched roofing",
+        "medium": "Resin-stabilized panels",
+        "high": "Thermal processed panels"
+      },
+      "recommendations": {
+        "low": "Palm leaf or straw roofing",
+        "medium": "Treated palm boards",
+        "high": "Nano-coated lightweight panels"
+      }
+    },
+    {
+      "typology": "Interior Partitions",
+      "space_requirements": [
+        "Acoustic",
+        "Security"
+      ],
+      "standards": "Product Certification",
+      "architectural_approach": "Contextual & Cultural",
+      "testing_method": "Acoustic insulation, Fire resistance",
+      "industrial": {
+        "low": "Hempcrete blocks",
+        "medium": "Lignin-extracted boards",
+        "high": "Nano-mycelium composites"
+      },
+      "recommendations": {
+        "low": "Pressed agricultural boards",
+        "medium": "PU foam mixed with agro fibers",
+        "high": "Thermal foams"
+      }
+    },
+    {
+      "typology": "Floor Covering",
+      "space_requirements": [
+        "Coating",
+        "Hygrometric"
+      ],
+      "standards": "Technical Standards",
+      "architectural_approach": "Innovative & Techno",
+      "testing_method": "Abrasion, Water absorption",
+      "industrial": {
+        "low": "Coconut husk tiles",
+        "medium": "Chemically treated composites",
+        "high": "Nano-cellulose flooring"
+      },
+      "recommendations": {
+        "low": "Pressed coconut tiles",
+        "medium": "Flax or hemp composites",
+        "high": "Bioengineered tiles"
+      }
+    },
+    {
+      "typology": "Insulation",
+      "space_requirements": [
+        "Thermal",
+        "Acoustic"
+      ],
+      "standards": "LEED/BREEAM",
+      "architectural_approach": "Sustainable & Environmental",
+      "testing_method": "Thermal conductivity, Fire test",
+      "industrial": {
+        "low": "Straw, rice husk stuffing",
+        "medium": "Lignin extracted foams",
+        "high": "Nano-cellulose foams"
+      },
+      "recommendations": {
+        "low": "Loose fill agro-waste",
+        "medium": "Fiber-based acoustic panels",
+        "high": "Aerogel-infused fibers"
+      }
+    }
+  ]
+}
