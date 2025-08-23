@@ -24,7 +24,9 @@
         "Corn-based industries"
       ],
       "construction_methods": [
-        "Timber framing in residential; Steel & Reinforced concrete (RC) in commercial; Light wood studs"
+        "Timber framing in residential",
+        "Steel & Reinforced concrete (RC) in commercial",
+        "Light wood studs"
       ]
     },
     {
@@ -48,7 +50,8 @@
         "Breweries"
       ],
       "construction_methods": [
-        "Light wood framing; RC & steel in urban"
+        "Light wood framing",
+        "RC & steel in urban"
       ]
     },
     {
@@ -97,7 +100,9 @@
         "Chocolate"
       ],
       "construction_methods": [
-        "RC frames & slabs; Masonry infill; Timber in Amazon"
+        "RC frames & slabs",
+        "Masonry infill",
+        "Timber in Amazon"
       ]
     },
     {
@@ -120,7 +125,8 @@
         "Wine"
       ],
       "construction_methods": [
-        "RC & masonry; Steel in industrial"
+        "RC & masonry",
+        "Steel in industrial"
       ]
     },
     {
@@ -143,7 +149,8 @@
         "Salmon processing"
       ],
       "construction_methods": [
-        "RC & confined masonry; Timber in south"
+        "RC & confined masonry",
+        "Timber in south"
       ]
     },
     {
@@ -164,7 +171,8 @@
         "Chocolate"
       ],
       "construction_methods": [
-        "Confined masonry; RC frames"
+        "Confined masonry",
+        "RC frames"
       ]
     },
     {
@@ -186,7 +194,8 @@
         "Avocado/asparagus packing"
       ],
       "construction_methods": [
-        "RC & confined masonry; Adobe (quincha) traditional"
+        "RC & confined masonry",
+        "Adobe (quincha) traditional"
       ]
     },
     {
@@ -207,7 +216,8 @@
         "Shrimp processing"
       ],
       "construction_methods": [
-        "Masonry & RC; Timber in rainforest areas"
+        "Masonry & RC",
+        "Timber in rainforest areas"
       ]
     },
     {
@@ -225,7 +235,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "Masonry & RC; Adobe in highlands"
+        "Masonry & RC",
+        "Adobe in highlands"
       ]
     },
     {
@@ -242,7 +253,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC & masonry; Timber growing"
+        "RC & masonry",
+        "Timber growing"
       ]
     },
     {
@@ -259,7 +271,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "Masonry & RC; Adobe in rural"
+        "Masonry & RC",
+        "Adobe in rural"
       ]
     },
     {
@@ -292,7 +305,9 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "Masonry cavity walls; Timber roofs; Steel/RC in commercial"
+        "Masonry cavity walls",
+        "Timber roofs",
+        "Steel/RC in commercial"
       ]
     },
     {
@@ -310,7 +325,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "Masonry & timber frame; RC in commercial"
+        "Masonry & timber frame",
+        "RC in commercial"
       ]
     },
     {
@@ -332,7 +348,9 @@
         "Bakery/pastry"
       ],
       "construction_methods": [
-        "Masonry & RC; Timber roofs; Stone historic"
+        "Masonry & RC",
+        "Timber roofs",
+        "Stone historic"
       ]
     },
     {
@@ -354,7 +372,8 @@
         "Cured meats"
       ],
       "construction_methods": [
-        "RC frames & hollow clay block; Masonry"
+        "RC frames & hollow clay block",
+        "Masonry"
       ]
     },
     {
@@ -376,7 +395,8 @@
         "Olive oil"
       ],
       "construction_methods": [
-        "RC & masonry; Timber roofs"
+        "RC & masonry",
+        "Timber roofs"
       ]
     },
     {
@@ -401,7 +421,8 @@
         "Cured meats"
       ],
       "construction_methods": [
-        "RC & masonry; Stone/masonry historic"
+        "RC & masonry",
+        "Stone/masonry historic"
       ]
     },
     {
@@ -425,7 +446,8 @@
       ],
       "construction_methods": [
         "Masonry blocks",
-        "RC & steel; Timber (CLT) advanced"
+        "RC & steel",
+        "Timber (CLT) advanced"
       ]
     },
     {
@@ -447,7 +469,8 @@
       "construction_methods": [
         "Masonry",
         "RC piles",
-        "Steel; Timber modular growing"
+        "Steel",
+        "Timber modular growing"
       ]
     },
     {
@@ -468,7 +491,8 @@
         "Potato processing (fries)"
       ],
       "construction_methods": [
-        "Masonry & RC; Timber roofs"
+        "Masonry & RC",
+        "Timber roofs"
       ]
     },
     {
@@ -489,7 +513,8 @@
         "Cheese"
       ],
       "construction_methods": [
-        "RC & timber; Masonry in low-rise"
+        "RC & timber",
+        "Masonry in low-rise"
       ]
     },
     {
@@ -510,7 +535,8 @@
         "Meat & dairy"
       ],
       "construction_methods": [
-        "Timber (CLT) & masonry; RC"
+        "Timber (CLT) & masonry",
+        "RC"
       ]
     },
     {
@@ -531,7 +557,8 @@
         "Bakeries"
       ],
       "construction_methods": [
-        "Timber framing & CLT; RC in infrastructure"
+        "Timber framing & CLT",
+        "RC in infrastructure"
       ]
     },
     {
@@ -550,7 +577,8 @@
         "Dairy"
       ],
       "construction_methods": [
-        "Timber (including glulam/CLT); RC & steel"
+        "Timber (including glulam/CLT)",
+        "RC & steel"
       ]
     },
     {
@@ -570,7 +598,8 @@
         "Bakeries"
       ],
       "construction_methods": [
-        "Timber & masonry; RC"
+        "Timber & masonry",
+        "RC"
       ]
     },
     {
@@ -590,7 +619,8 @@
         "Pork processing"
       ],
       "construction_methods": [
-        "Masonry & RC; Timber in housing"
+        "Masonry & RC",
+        "Timber in housing"
       ]
     },
     {
@@ -613,7 +643,8 @@
       ],
       "construction_methods": [
         "Masonry (ceramic blocks)",
-        "RC slabs; Panelized"
+        "RC slabs",
+        "Panelized"
       ]
     },
     {
@@ -630,7 +661,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "Masonry & RC; Panelized systems"
+        "Masonry & RC",
+        "Panelized systems"
       ]
     },
     {
@@ -651,7 +683,8 @@
         "Canning"
       ],
       "construction_methods": [
-        "RC frames with masonry infill; Stone traditional"
+        "RC frames with masonry infill",
+        "Stone traditional"
       ]
     },
     {
@@ -673,7 +706,8 @@
         "Sugar"
       ],
       "construction_methods": [
-        "RC frames & shear walls; Masonry infill"
+        "RC frames & shear walls",
+        "Masonry infill"
       ]
     },
     {
@@ -690,7 +724,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC & masonry; Panel blocks legacy"
+        "RC & masonry",
+        "Panel blocks legacy"
       ]
     },
     {
@@ -707,7 +742,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC panel systems; Masonry"
+        "RC panel systems",
+        "Masonry"
       ]
     },
     {
@@ -729,7 +765,8 @@
         "Citrus packing"
       ],
       "construction_methods": [
-        "RC & masonry; Rammed earth (pisé) traditional"
+        "RC & masonry",
+        "Rammed earth (pisé) traditional"
       ]
     },
     {
@@ -750,7 +787,8 @@
         "Dairy"
       ],
       "construction_methods": [
-        "RC & masonry; Adobe traditional"
+        "RC & masonry",
+        "Adobe traditional"
       ]
     },
     {
@@ -770,7 +808,8 @@
         "Canned tuna"
       ],
       "construction_methods": [
-        "RC & masonry; Stone/adobe"
+        "RC & masonry",
+        "Stone/adobe"
       ]
     },
     {
@@ -786,7 +825,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC & masonry; Stone/adobe oases"
+        "RC & masonry",
+        "Stone/adobe oases"
       ]
     },
     {
@@ -809,7 +849,8 @@
         "Canning"
       ],
       "construction_methods": [
-        "RC frames; Brick masonry"
+        "RC frames",
+        "Brick masonry"
       ]
     },
     {
@@ -846,7 +887,8 @@
       ],
       "construction_methods": [
         "Stone masonry",
-        "RC; Timber in highlands"
+        "RC",
+        "Timber in highlands"
       ]
     },
     {
@@ -869,7 +911,8 @@
       ],
       "construction_methods": [
         "Masonry (stone blocks)",
-        "RC; Timber roofing"
+        "RC",
+        "Timber roofing"
       ]
     },
     {
@@ -906,7 +949,8 @@
         "Breweries"
       ],
       "construction_methods": [
-        "Concrete block masonry; RC"
+        "Concrete block masonry",
+        "RC"
       ]
     },
     {
@@ -924,7 +968,8 @@
       "food_industries": [],
       "construction_methods": [
         "Concrete block",
-        "RC; Timber roofs"
+        "RC",
+        "Timber roofs"
       ]
     },
     {
@@ -963,7 +1008,8 @@
         "Breweries"
       ],
       "construction_methods": [
-        "Brick/CMU masonry; RC & steel"
+        "Brick/CMU masonry",
+        "RC & steel"
       ]
     },
     {
@@ -1000,7 +1046,8 @@
         "Bottled water"
       ],
       "construction_methods": [
-        "RC & CMU masonry; Steel in industrial"
+        "RC & CMU masonry",
+        "Steel in industrial"
       ]
     },
     {
@@ -1016,7 +1063,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC & steel; CMU infill"
+        "RC & steel",
+        "CMU infill"
       ]
     },
     {
@@ -1032,7 +1080,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC & steel; CMU"
+        "RC & steel",
+        "CMU"
       ]
     },
     {
@@ -1048,7 +1097,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC & CMU; Steel industrial"
+        "RC & CMU",
+        "Steel industrial"
       ]
     },
     {
@@ -1064,7 +1114,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC & CMU; Steel"
+        "RC & CMU",
+        "Steel"
       ]
     },
     {
@@ -1081,7 +1132,8 @@
       ],
       "food_industries": [],
       "construction_methods": [
-        "RC & masonry; Stone/adobe traditional"
+        "RC & masonry",
+        "Stone/adobe traditional"
       ]
     },
     {
@@ -1147,7 +1199,8 @@
         "Processed foods"
       ],
       "construction_methods": [
-        "RC & CMU; Stone cladding"
+        "RC & CMU",
+        "Stone cladding"
       ]
     },
     {
@@ -1167,7 +1220,8 @@
         "Flour milling"
       ],
       "construction_methods": [
-        "RC & CMU; Adobe historically"
+        "RC & CMU",
+        "Adobe historically"
       ]
     },
     {
@@ -1189,7 +1243,9 @@
       ],
       "construction_methods": [
         "RC",
-        "Steel; Masonry; Adobe/earth in rural"
+        "Steel",
+        "Masonry",
+        "Adobe/earth in rural"
       ]
     },
     {
@@ -1243,7 +1299,9 @@
         "Spices"
       ],
       "construction_methods": [
-        "RC & brick masonry; Stone; Timber in NE"
+        "RC & brick masonry",
+        "Stone",
+        "Timber in NE"
       ]
     },
     {
@@ -1265,7 +1323,8 @@
         "Flour milling"
       ],
       "construction_methods": [
-        "Brick masonry & RC; Stone in north"
+        "Brick masonry & RC",
+        "Stone in north"
       ]
     },
     {
@@ -1306,7 +1365,8 @@
         "Coconut products"
       ],
       "construction_methods": [
-        "RC & brick/block; Timber roofs"
+        "RC & brick/block",
+        "Timber roofs"
       ]
     },
     {
@@ -1326,7 +1386,8 @@
         "Rice mills"
       ],
       "construction_methods": [
-        "Stone/brick masonry; RC frames"
+        "Stone/brick masonry",
+        "RC frames"
       ]
     },
     {
@@ -1349,7 +1410,9 @@
         "Tea"
       ],
       "construction_methods": [
-        "RC & steel; Masonry; Rammed earth historic"
+        "RC & steel",
+        "Masonry",
+        "Rammed earth historic"
       ]
     },
     {
@@ -1370,7 +1433,8 @@
         "Rice"
       ],
       "construction_methods": [
-        "RC & steel; Timber traditional (post & beam)"
+        "RC & steel",
+        "Timber traditional (post & beam)"
       ]
     },
     {
@@ -1391,7 +1455,8 @@
         "Breweries"
       ],
       "construction_methods": [
-        "RC & steel; Masonry infill"
+        "RC & steel",
+        "Masonry infill"
       ]
     },
     {
@@ -1434,7 +1499,8 @@
         "Canned fruit"
       ],
       "construction_methods": [
-        "RC & masonry; Timber rural"
+        "RC & masonry",
+        "Timber rural"
       ]
     },
     {
@@ -1455,7 +1521,8 @@
         "Cocoa"
       ],
       "construction_methods": [
-        "RC & steel; Timber in Borneo"
+        "RC & steel",
+        "Timber in Borneo"
       ]
     },
     {
@@ -1477,7 +1544,8 @@
         "Fisheries"
       ],
       "construction_methods": [
-        "RC & masonry; Timber/bamboo traditional"
+        "RC & masonry",
+        "Timber/bamboo traditional"
       ]
     },
     {
@@ -1498,7 +1566,8 @@
         "Canned fish"
       ],
       "construction_methods": [
-        "RC & masonry; Timber coastal"
+        "RC & masonry",
+        "Timber coastal"
       ]
     },
     {
@@ -1518,7 +1587,8 @@
         "Bakeries"
       ],
       "construction_methods": [
-        "RC & steel high-rise; Precast"
+        "RC & steel high-rise",
+        "Precast"
       ]
     },
     {
@@ -1540,7 +1610,9 @@
         "Grain milling"
       ],
       "construction_methods": [
-        "Timber framing; Brick veneer; RC & steel"
+        "Timber framing",
+        "Brick veneer",
+        "RC & steel"
       ]
     },
     {
@@ -1562,7 +1634,8 @@
         "Wine"
       ],
       "construction_methods": [
-        "Timber framing; RC & steel"
+        "Timber framing",
+        "RC & steel"
       ]
     }
   ]
