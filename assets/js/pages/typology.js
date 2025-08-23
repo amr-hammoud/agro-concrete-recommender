@@ -1,12 +1,16 @@
 (async function () {
   UI.renderHeader("Typology");
 
-  // We no longer need typology.json here—component only
-  const ctxData = await App.loadJSON("assets/data/countries.json");
-  const typData = await App.loadJSON("assets/data/typology.json"); // still load to preserve short link structure
+  // Load both datasets (typologies are in typology.json)
+  const [ctxData, typData] = await Promise.all([
+    App.loadJSON("assets/data/countries.json"),
+    App.loadJSON("assets/data/typology.json"),
+  ]);
+
   const countries = ctxData.countries || [];
   const L = Short.buildLookup({ countries, typologiesTable: typData });
 
+  const elTyp = document.getElementById("typology");
   const elComp = document.getElementById("component");
   const elBack = document.getElementById("back");
   const elNext = document.getElementById("next");
@@ -16,14 +20,31 @@
   const params = new URLSearchParams(location.search);
   const sCode = params.get("s");
 
-  // Restore (typology may exist from old links; we’ll ignore it here but keep it in short code as-is)
+  // Restore from shortlink if present; fall back to URL/LocalStorage legacy
   const restored = sCode
     ? Short.decodeShort(sCode, L)
     : App.State.syncFromURL();
+
+  // Populate Typology options (unique list)
+  const typologies = [
+    ...new Set((typData.typologies || []).map((t) => t.typology)),
+  ]
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b));
+  elTyp.innerHTML = ['<option value="">-- Select --</option>']
+    .concat(typologies.map((v) => `<option>${v}</option>`))
+    .join("");
+
+  // Restore values
+  if (restored.typology) elTyp.value = restored.typology;
   if (restored.component) elComp.value = restored.component;
 
   function snapshot() {
-    const s = { ...App.State.get(), component: elComp.value };
+    const s = {
+      ...App.State.get(),
+      typology: elTyp.value,
+      component: elComp.value,
+    };
     App.State.set(s);
     return s;
   }
@@ -45,7 +66,8 @@
   }
 
   ["change", "keyup"].forEach((evt) => {
-    [elComp].forEach((el) => el.addEventListener(evt, refreshLinks));
+    [elTyp, elComp].forEach((el) => el.addEventListener(evt, refreshLinks));
   });
+
   refreshLinks();
 })();

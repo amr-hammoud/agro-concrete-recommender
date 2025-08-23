@@ -25,6 +25,16 @@
       </div>
 
       <div class="card space-y-4">
+        <!-- Typology (restored) -->
+        <label class="block">
+          <span class="text-sm font-semibold">Building Typology</span>
+          <select id="typology" class="mt-1 w-full border rounded p-2">
+            <option value="">-- Select --</option>
+            <!-- options filled by JS -->
+          </select>
+        </label>
+
+        <!-- Component (kept) -->
         <label class="block">
           <span class="text-sm font-semibold">Influential Component</span>
           <select id="component" class="mt-1 w-full border rounded p-2">
@@ -39,6 +49,7 @@
 
         <div class="flex justify-between">
           <a id="back" class="px-4 py-2 rounded border">Back</a>
+          <!-- in-card Next hidden on mobile already -->
           <a
             id="next"
             class="hidden sm:inline-flex px-4 py-2 rounded bg-[var(--brown)] text-white"

@@ -21,7 +21,7 @@
   const code = Short.encodeShort(s, L);
   Short.writeURLWithCode(code);
 
-  // Render summary only (no recommendation)
+  // ---- Summary (show Typology again) ----
   document.getElementById("summary").innerHTML = `
     <h2 class="text-xl font-semibold mb-4">Your Selection</h2>
     <div class="grid md:grid-cols-2 gap-2 text-sm">
@@ -30,11 +30,46 @@
       <div><strong>Agriculture:</strong> ${s.agri || "—"}</div>
       <div><strong>Food Industry:</strong> ${s.food || "—"}</div>
       <div><strong>Construction:</strong> ${s.cons || "—"}</div>
+      <div><strong>Typology:</strong> ${s.typology || "—"}</div>
       <div><strong>Component:</strong> ${s.component || "—"}</div>
       <div><strong>Architectural Approach:</strong> ${s.arch || "—"}</div>
       <div><strong>Industrial Tier:</strong> ${s.industrial || "—"}</div>
     </div>
   `;
+
+  // ---- Recommendation (Typology + Industrial Tier) ----
+  function eqi(a, b) {
+    return (a || "").toLowerCase() === (b || "").toLowerCase();
+  }
+
+  let recHTML = `
+    <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
+    <p>No matching recommendation found. ${
+      !s.typology ? "Please choose a Typology on the Typology step." : ""
+    }</p>
+  `;
+
+  if (s.typology && s.industrial) {
+    const row = (typData.typologies || []).find((t) =>
+      eqi(t.typology, s.typology)
+    );
+    if (row) {
+      const rec = row.recommendations?.[s.industrial] || "—";
+      recHTML = `
+        <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
+        <p class="mb-2"><strong>Material Suggestion:</strong> ${rec}</p>
+        <p class="mb-2"><strong>Standards:</strong> ${row.standards || "—"}</p>
+        <p class="mb-2"><strong>Testing Methods:</strong> ${
+          row.testing_method || "—"
+        }</p>
+        <p class="mb-2"><strong>Architectural Approach (from table):</strong> ${
+          row.architectural_approach || "—"
+        }</p>
+      `;
+    }
+  }
+
+  document.getElementById("recommendation").innerHTML = recHTML;
 
   // Copy Link action
   const btnCopy = document.getElementById("copylink");
