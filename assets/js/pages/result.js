@@ -8,6 +8,7 @@
   const countries = ctxData.countries || [];
   const L = Short.buildLookup({ countries, typologiesTable: typData });
 
+  // Restore state (prefer short code if present)
   const params = new URLSearchParams(location.search);
   const sCode = params.get("s");
   const restored = sCode
@@ -16,10 +17,10 @@
 
   const s = { ...App.State.get(), ...restored };
   App.State.set(s);
-
   const code = Short.encodeShort(s, L);
   Short.writeURLWithCode(code);
 
+  // Summary (without Typology)
   document.getElementById("summary").innerHTML = `
     <h2 class="text-xl font-semibold mb-4">Your Selection</h2>
     <div class="grid md:grid-cols-2 gap-2 text-sm">
@@ -28,41 +29,28 @@
       <div><strong>Agriculture:</strong> ${s.agri || "—"}</div>
       <div><strong>Food Industry:</strong> ${s.food || "—"}</div>
       <div><strong>Construction:</strong> ${s.cons || "—"}</div>
-      <div><strong>Typology:</strong> ${s.typology || "—"}</div>
       <div><strong>Component:</strong> ${s.component || "—"}</div>
-      <div><strong>Architectural Approach (chosen):</strong> ${
-        s.arch || "—"
-      }</div>
-      <div><strong>Industrial Tier (chosen):</strong> ${
-        s.industrial || "—"
-      }</div>
+      <div><strong>Architectural Approach:</strong> ${s.arch || "—"}</div>
+      <div><strong>Industrial Tier:</strong> ${s.industrial || "—"}</div>
     </div>
   `;
 
-  const row = (typData.typologies || []).find((t) => t.typology === s.typology);
-  const rec = row
-    ? {
-        standards: row.standards || "—",
-        testing: row.testing_method || "—",
-        tableArchitectural: row.architectural_approach || "—",
-        recommendation: row.recommendations?.[s.industrial || "low"] || "—",
-      }
-    : null;
-
-  const box = document.getElementById("recommendation");
-  box.innerHTML = rec
-    ? `
+  // Recommendation placeholder (since Typology moved to Virtual Model)
+  document.getElementById("recommendation").innerHTML = `
     <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
-    <p class="mb-2"><strong>Material Suggestion:</strong> ${rec.recommendation}</p>
-    <p class="mb-2"><strong>Standards:</strong> ${rec.standards}</p>
-    <p class="mb-2"><strong>Testing Methods:</strong> ${rec.testing}</p>
-    <p class="mb-2"><strong>Architectural Approach (from table):</strong> ${rec.tableArchitectural}</p>
-  `
-    : `
-    <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
-    <p>No matching recommendation found. Please choose a Typology and Industrial Tier.</p>
+    <p class="mb-2">
+      The Recommendation rule previously used <em>Building Typology</em>.
+      Since Typology has moved to <strong>Virtual Model</strong>, this page now summarizes your selections.
+    </p>
+    <p class="text-sm opacity-80">
+      Tip: Go to <a href="model.html${
+        code ? "?s=" + code : ""
+      }" class="underline">Virtual Model</a> to specify
+      Typology and full space/material specs, then launch a simulation (placeholder).
+    </p>
   `;
 
+  // Copy Link
   const btnCopy = document.getElementById("copylink");
   if (btnCopy) {
     btnCopy.addEventListener("click", async () => {
@@ -76,6 +64,7 @@
     });
   }
 
+  // Sticky nav: back/home
   const back = "approach.html" + (code ? "?s=" + code : "");
   const home = "index.html" + (code ? "?s=" + code : "");
   UI.setStickyLinks({ back, next: home });

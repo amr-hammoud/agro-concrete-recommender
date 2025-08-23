@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Simulation Results — Coming Soon</title>
+    <title>Simulation Results</title>
 
     <!-- Tailwind + fonts + theme -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,47 +18,64 @@
   </head>
   <body class="min-h-screen brand-bg">
     <div class="max-w-3xl mx-auto py-10 px-4">
-      <header class="mb-6 text-center">
-        <h1 class="text-3xl font-bold brand-brown">Simulation Results</h1>
-        <p class="text-sm mt-2 opacity-80">Coming soon</p>
+      <header
+        class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+      >
+        <h1 class="text-2xl font-bold brand-brown">Simulation Results</h1>
+        <div class="flex gap-2">
+          <a id="home" class="btn btn-secondary">Home</a>
+          <a id="recommend" class="btn btn-secondary">Recommendation</a>
+          <button onclick="resetAll()" class="btn btn-secondary">Reset</button>
+        </div>
       </header>
 
-      <div class="card space-y-3">
-        <p class="text-sm">
-          This tool will let you preview KPIs from external simulation outputs
-          directly in the browser.
-        </p>
-        <ul class="list-disc pl-5 text-sm space-y-1">
-          <li>Upload or paste results</li>
-          <li>View key performance charts</li>
-          <li>Compare scenarios side-by-side</li>
-        </ul>
+      <div class="card">
+        <div class="grid gap-3">
+          <button id="sim-upload" class="btn btn-primary w-full">
+            Upload or paste results
+          </button>
+          <button id="sim-charts" class="btn btn-primary w-full">
+            View key performance charts
+          </button>
+          <button id="sim-compare" class="btn btn-primary w-full">
+            Compare scenarios side-by-side
+          </button>
+        </div>
       </div>
 
-      <div class="mt-6 grid gap-2 sm:flex sm:justify-end">
-        <a id="home" class="btn btn-secondary w-full sm:w-auto">Back to Home</a>
-        <a id="recommend" class="btn btn-primary w-full sm:w-auto"
-          >Try Recommendation</a
-        >
-        <button onclick="resetAll()" class="btn btn-secondary w-full sm:w-auto">
-          Reset
-        </button>
-      </div>
+      <!-- Optional helper note -->
+      <p class="text-xs opacity-70 mt-3">
+        These actions are placeholders for now; they don’t perform uploads or
+        charting yet.
+      </p>
     </div>
 
     <script src="assets/js/state.js"></script>
+    <script src="assets/js/ui.js"></script>
     <script src="assets/js/shortlink.js"></script>
     <script src="assets/js/version.js"></script>
     <script>
-      // preserve ?s= and wire buttons
       (function () {
         const suffix = window.location.search || "";
-        document
-          .getElementById("home")
-          .setAttribute("href", "index.html" + suffix);
-        document
-          .getElementById("recommend")
-          .setAttribute("href", "context.html" + suffix);
+        const home = document.getElementById("home");
+        const recommend = document.getElementById("recommend");
+        if (home) home.setAttribute("href", "index.html" + suffix);
+        if (recommend) recommend.setAttribute("href", "context.html" + suffix);
+
+        function noopToast(msg) {
+          if (window.UI && UI.toast) UI.toast(msg);
+          else alert(msg);
+        }
+
+        document.getElementById("sim-upload").addEventListener("click", () => {
+          noopToast("Upload/paste flow not implemented yet");
+        });
+        document.getElementById("sim-charts").addEventListener("click", () => {
+          noopToast("Charts view not implemented yet");
+        });
+        document.getElementById("sim-compare").addEventListener("click", () => {
+          noopToast("Scenario comparison not implemented yet");
+        });
       })();
     </script>
   </body>

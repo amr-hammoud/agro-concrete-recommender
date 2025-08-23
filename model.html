@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Virtual Model — Coming Soon</title>
+    <title>Virtual Model</title>
 
     <!-- Tailwind + fonts + theme -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,49 +17,308 @@
     <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
   </head>
   <body class="min-h-screen brand-bg">
-    <div class="max-w-3xl mx-auto py-10 px-4">
-      <header class="mb-6 text-center">
-        <h1 class="text-3xl font-bold brand-brown">Virtual Model</h1>
-        <p class="text-sm mt-2 opacity-80">Coming soon</p>
-      </header>
-
-      <div class="card space-y-3">
-        <p class="text-sm">
-          This tool will let you define custom material properties and export a
-          lightweight model package.
-        </p>
-        <ul class="list-disc pl-5 text-sm space-y-1">
-          <li>Pick or input thermal / acoustic properties</li>
-          <li>Preview composition &amp; layers</li>
-          <li>Download as a simple model bundle</li>
-        </ul>
+    <div class="max-w-4xl mx-auto py-10 px-4">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-2xl font-bold brand-brown">Virtual Model</h1>
+        <div class="flex gap-2">
+          <a id="home" class="btn btn-secondary">Home</a>
+          <button onclick="resetAll()" class="btn btn-secondary">Reset</button>
+        </div>
       </div>
 
-      <div class="mt-6 grid gap-2 sm:flex sm:justify-end">
-        <a id="home" class="btn btn-secondary w-full sm:w-auto">Back to Home</a>
-        <a id="recommend" class="btn btn-primary w-full sm:w-auto"
-          >Try Recommendation</a
-        >
-        <button onclick="resetAll()" class="btn btn-secondary w-full sm:w-auto">
-          Reset
+      <!-- 1) Context -->
+      <div class="card space-y-4 mb-6">
+        <h2 class="text-lg font-semibold">Context</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="text-sm font-semibold">Country</span>
+            <select
+              id="vm-country"
+              class="mt-1 w-full border rounded p-2"
+            ></select>
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Climate</span>
+            <select
+              id="vm-climate"
+              class="mt-1 w-full border rounded p-2"
+            ></select>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2) Typology & Component -->
+      <div class="card space-y-4 mb-6">
+        <h2 class="text-lg font-semibold">Building Typology & Component</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="text-sm font-semibold">Building Typology</span>
+            <select id="vm-typology" class="mt-1 w-full border rounded p-2">
+              <option value="">-- Select --</option>
+              <option>Residential</option>
+              <option>Commercial</option>
+              <option>Industrial</option>
+              <option>Educational</option>
+              <option>Healthcare</option>
+              <option>Cultural</option>
+              <option>Religious</option>
+              <option>Governmental public</option>
+              <option>Sports</option>
+              <option>Theatre</option>
+              <option>Offices</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Influential Component</span>
+            <select id="vm-component" class="mt-1 w-full border rounded p-2">
+              <option value="">-- Select --</option>
+              <option>Floor Structures</option>
+              <option>Opaque Facade</option>
+              <option>Transparent Facades</option>
+              <option>Roofs</option>
+              <option>Interior Partitions</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- 3) Specifications of the architectural space -->
+      <div class="card space-y-4 mb-6">
+        <h2 class="text-lg font-semibold">
+          Architectural Space Specifications
+        </h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <label class="block">
+            <span class="text-sm font-semibold">Length (m)</span>
+            <input
+              id="vm-length"
+              type="number"
+              step="0.01"
+              min="0"
+              class="mt-1 w-full border rounded p-2"
+              placeholder="e.g., 10.5"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Width (m)</span>
+            <input
+              id="vm-width"
+              type="number"
+              step="0.01"
+              min="0"
+              class="mt-1 w-full border rounded p-2"
+              placeholder="e.g., 8.0"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Clear Height (m)</span>
+            <input
+              id="vm-height"
+              type="number"
+              step="0.01"
+              min="0"
+              class="mt-1 w-full border rounded p-2"
+              placeholder="e.g., 3.2"
+            />
+          </label>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="text-sm font-semibold">Floor (index)</span>
+            <input
+              id="vm-floor"
+              type="number"
+              step="1"
+              min="0"
+              class="mt-1 w-full border rounded p-2"
+              placeholder="e.g., 0"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Total Floors</span>
+            <input
+              id="vm-total-floors"
+              type="number"
+              step="1"
+              min="1"
+              class="mt-1 w-full border rounded p-2"
+              placeholder="e.g., 5"
+            />
+          </label>
+        </div>
+
+        <!-- Doors -->
+        <div class="space-y-2">
+          <h3 class="font-semibold">Doors</h3>
+          <div class="grid md:grid-cols-4 gap-4">
+            <label class="block">
+              <span class="text-sm font-semibold">Count</span>
+              <input
+                id="vm-doors-count"
+                type="number"
+                min="0"
+                class="mt-1 w-full border rounded p-2"
+              />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold">Size (m² or WxH)</span>
+              <input
+                id="vm-doors-size"
+                type="text"
+                class="mt-1 w-full border rounded p-2"
+                placeholder="e.g., 0.9x2.1 m"
+              />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold">Location</span>
+              <input
+                id="vm-doors-location"
+                type="text"
+                class="mt-1 w-full border rounded p-2"
+                placeholder="e.g., North wall"
+              />
+            </label>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- Windows -->
+        <div class="space-y-2">
+          <h3 class="font-semibold">Windows</h3>
+          <div class="grid md:grid-cols-5 gap-4">
+            <label class="block">
+              <span class="text-sm font-semibold">Count</span>
+              <input
+                id="vm-windows-count"
+                type="number"
+                min="0"
+                class="mt-1 w-full border rounded p-2"
+              />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold">Size (m² or WxH)</span>
+              <input
+                id="vm-windows-size"
+                type="text"
+                class="mt-1 w-full border rounded p-2"
+                placeholder="e.g., 1.2x1.2 m"
+              />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold">Sill Height (m)</span>
+              <input
+                id="vm-windows-sill"
+                type="number"
+                step="0.01"
+                min="0"
+                class="mt-1 w-full border rounded p-2"
+              />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold">Lintel Height (m)</span>
+              <input
+                id="vm-windows-lintel"
+                type="number"
+                step="0.01"
+                min="0"
+                class="mt-1 w-full border rounded p-2"
+              />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold">Location</span>
+              <input
+                id="vm-windows-location"
+                type="text"
+                class="mt-1 w-full border rounded p-2"
+                placeholder="e.g., South & East walls"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4) Material specifications -->
+      <div class="card space-y-4 mb-6">
+        <h2 class="text-lg font-semibold">Material Specifications</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <label class="block">
+            <span class="text-sm font-semibold">Density (kg/m³)</span>
+            <input
+              id="vm-density"
+              type="number"
+              step="0.01"
+              min="0"
+              class="mt-1 w-full border rounded p-2"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold"
+              >Thermal Conductivity λ (W/m·K)</span
+            >
+            <input
+              id="vm-conductivity"
+              type="number"
+              step="0.0001"
+              min="0"
+              class="mt-1 w-full border rounded p-2"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Specific Heat c (J/kg·K)</span>
+            <input
+              id="vm-spec-heat"
+              type="number"
+              step="0.01"
+              min="0"
+              class="mt-1 w-full border rounded p-2"
+            />
+          </label>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4">
+          <label class="block">
+            <span class="text-sm font-semibold"
+              >Vapor Permeability (perm or μ)</span
+            >
+            <input
+              id="vm-vapor"
+              type="text"
+              class="mt-1 w-full border rounded p-2"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Fire Rating</span>
+            <input
+              id="vm-fire"
+              type="text"
+              class="mt-1 w-full border rounded p-2"
+              placeholder="e.g., REI 60"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Notes</span>
+            <input
+              id="vm-notes"
+              type="text"
+              class="mt-1 w-full border rounded p-2"
+              placeholder="optional"
+            />
+          </label>
+        </div>
+      </div>
+
+      <!-- Launch -->
+      <div class="flex justify-end">
+        <button id="vm-launch" class="btn btn-primary">
+          Launch Simulation
         </button>
       </div>
     </div>
 
+    <!-- scripts -->
     <script src="assets/js/state.js"></script>
     <script src="assets/js/shortlink.js"></script>
     <script src="assets/js/version.js"></script>
-    <script>
-      // preserve ?s= and wire buttons
-      (function () {
-        const suffix = window.location.search || "";
-        document
-          .getElementById("home")
-          .setAttribute("href", "index.html" + suffix);
-        document
-          .getElementById("recommend")
-          .setAttribute("href", "context.html" + suffix);
-      })();
-    </script>
+    <script src="assets/js/pages/model.js"></script>
   </body>
 </html>
