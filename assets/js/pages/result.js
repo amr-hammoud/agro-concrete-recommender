@@ -15,12 +15,13 @@
     ? Short.decodeShort(sCode, L)
     : App.State.syncFromURL();
 
+  // Merge & persist + keep compact URL
   const s = { ...App.State.get(), ...restored };
   App.State.set(s);
   const code = Short.encodeShort(s, L);
   Short.writeURLWithCode(code);
 
-  // Summary (without Typology)
+  // Render summary only (no recommendation)
   document.getElementById("summary").innerHTML = `
     <h2 class="text-xl font-semibold mb-4">Your Selection</h2>
     <div class="grid md:grid-cols-2 gap-2 text-sm">
@@ -35,22 +36,7 @@
     </div>
   `;
 
-  // Recommendation placeholder (since Typology moved to Virtual Model)
-  document.getElementById("recommendation").innerHTML = `
-    <h2 class="text-xl font-semibold mb-4">Recommendation</h2>
-    <p class="mb-2">
-      The Recommendation rule previously used <em>Building Typology</em>.
-      Since Typology has moved to <strong>Virtual Model</strong>, this page now summarizes your selections.
-    </p>
-    <p class="text-sm opacity-80">
-      Tip: Go to <a href="model.html${
-        code ? "?s=" + code : ""
-      }" class="underline">Virtual Model</a> to specify
-      Typology and full space/material specs, then launch a simulation (placeholder).
-    </p>
-  `;
-
-  // Copy Link
+  // Copy Link action
   const btnCopy = document.getElementById("copylink");
   if (btnCopy) {
     btnCopy.addEventListener("click", async () => {
